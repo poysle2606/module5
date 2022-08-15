@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css_file/facility.css">
     <link rel="stylesheet" href="../css_file/prototype.css">
+    <link rel="stylesheet" href="../css_file/customer.css">
 </head>
 <body>
 <div id="header-furama">
@@ -19,7 +19,7 @@
              style="margin-left: 150px"/>
     </div>
 </div>
-<div style="margin-top: 3px; position: sticky; top: -1px">
+<div style="margin-top: 3px; top: -1px">
     <nav class="navbar navbar-expand-lg navbar-primary">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,11 +28,12 @@
                         <a class="nav-link active button-function" aria-current="page" href="../home.html">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="../facility/facility.html">Loại
+                        <a class="nav-link active button-function" aria-current="page" href="../facility/list.html">Loại
                             phòng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="/customer">Nhân viên</a>
+                        <a class="nav-link active button-function" aria-current="page" href="../customer/list.html">Khách
+                            hàng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active button-function" aria-current="page" href="/customer">Sự kiện</a>
@@ -44,7 +45,8 @@
                         <a class="nav-link active button-function" aria-current="page" href="/customer">Điểm đến</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="../contract/contract.html">Hợp đồng</a>
+                        <a class="nav-link active button-function" aria-current="page" href="../contract/list.html">Hợp
+                            đồng</a>
                     </li>
                 </ul>
             </div>
@@ -52,19 +54,44 @@
     </nav>
 </div>
 
-<div class="container">
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="text">KHÁCH HÀNG</h3>
+        <img src="../../img/Furama_Resort_Danang_-_Ocean_Pool_2.jpg" height="400" width="1285"/>
+    </div>
+</div>
+
+<div>
+    <div class="col-lg-12" style="margin: 10px 0 auto">
+        <h1 style="text-align: center" class="vc_custom_heading font-content">DANH SÁCH KHÁCH HÀNG</h1>
+    </div>
+    <div class="col-lg-6" style="margin: 0 auto; text-align: center">
+        <i style="font-size: 18px">
+            Khách hàng sẽ quên những điều bạn làm,
+            nhưng họ sẽ không bao giờ quên những cảm nhận mà bạn mang đến cho họ.
+        </i>
+        <div class="vc_empty_space" style="height: 25px"><span class="vc_empty_space_inner"></span></div>
+    </div>
+</div>
+
+<div>
     <center>
-        <h1>DANH SÁCH NHÂN VIÊN</h1>
+        <a href="../customer/create.html" class="btn btn-primary button-create-customer">Thêm mới khách hàng</a>
     </center>
-    <table class="table table-striped">
+</div>
+
+<div class="container">
+    <table class="gradient-custom">
         <tr style="text-align: center">
             <th>STT</th>
             <th>Họ và tên</th>
-            <th>Năm sinh</th>
+            <th>Ngày sinh</th>
             <th>Giới tính</th>
+            <th>Số CMND</th>
             <th>Số điện thoại</th>
             <th>Email</th>
             <th>Địa chỉ</th>
+            <th>Loại khách</th>
             <th>Chỉnh sửa</th>
             <th>Xóa</th>
         </tr>
@@ -73,14 +100,16 @@
             <td>Nguyễn Văn A</td>
             <td>1998</td>
             <td>Nam</td>
-            <td>113</td>
-            <td>dongle113@gmail.com</td>
+            <td>123456789</td>
+            <td>091284637</td>
+            <td>vanA113@gmail.com</td>
             <td>113,Nguyễn Lương Bằng</td>
+            <td>Gold</td>
             <td>
-                <a class="btn btn-primary" href="../customer/edit.html">Sửa</a>
+                <a class="btn btn-primary button-option" href="../customer/edit.html">Sửa</a>
             </td>
             <td>
-                <a href="#" class="btn btn-outline-primary " data-bs-toggle="modal"
+                <a href="#" class="btn btn-primary button-option" data-bs-toggle="modal"
                    data-bs-target="#exampleModal">Xóa</a>
             </td>
         </tr>
@@ -89,19 +118,98 @@
             <td>Nguyễn Văn B</td>
             <td>1993</td>
             <td>Nam</td>
-            <td>114</td>
-            <td>dongle114@gmail.com</td>
-            <td>113,Lê Duẩn</td>
+            <td>987654321</td>
+            <td>0327475943</td>
+            <td>vanB114@gmail.com</td>
+            <td>02, Trường Sơn</td>
+            <td>Platinum</td>
             <td>
-                <a class="btn btn-primary" href="../customer/edit.html">Sửa</a>
+                <a class="btn btn-primary button-option"
+                   href="../customer/edit.html">Sửa</a>
             </td>
             <td>
-                <a href="#" class="btn btn-outline-primary " data-bs-toggle="modal"
+                <a href="#" class="btn btn-primary button-option"
+                   data-bs-toggle="modal"
+                   data-bs-target="#exampleModal">Xóa</a>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td>3</td>
+            <td>Nguyễn Thị C</td>
+            <td>1972</td>
+            <td>Nữ</td>
+            <td>123987456</td>
+            <td>0127773334</td>
+            <td>thiC115@gmail.com</td>
+            <td>K113/02, Chợ Cồn</td>
+            <td>Diamond</td>
+            <td>
+                <a class="btn btn-primary button-option"
+                   href="../customer/edit.html">Sửa</a>
+            </td>
+            <td>
+                <a href="#" class="btn btn-primary button-option"
+                   data-bs-toggle="modal"
+                   data-bs-target="#exampleModal">Xóa</a>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td>4</td>
+            <td>Nguyễn Văn D</td>
+            <td>1992</td>
+            <td>Nam</td>
+            <td>988734274</td>
+            <td>0934637472</td>
+            <td>vanD1992@gmail.com</td>
+            <td>104, Trần Thị Lý</td>
+            <td>Member</td>
+            <td>
+                <a class="btn btn-primary button-option"
+                   href="../customer/edit.html">Sửa</a>
+            </td>
+            <td>
+                <a href="#" class="btn btn-primary button-option"
+                   data-bs-toggle="modal"
+                   data-bs-target="#exampleModal">Xóa</a>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td>5</td>
+            <td>Nguyễn Thị E</td>
+            <td>1987</td>
+            <td>Nữ</td>
+            <td>234859375</td>
+            <td>0934227493</td>
+            <td>thiE117@gmail.com</td>
+            <td>K02, Hòn Côn</td>
+            <td>Silver</td>
+            <td>
+                <a class="btn btn-primary button-option"
+                   href="../customer/edit.html">Sửa</a>
+            </td>
+            <td>
+                <a href="#" class="btn btn-primary button-option"
+                   data-bs-toggle="modal"
                    data-bs-target="#exampleModal">Xóa</a>
             </td>
         </tr>
     </table>
 </div>
+
+<div class="paging-customer">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</div>
+
 <div id="footer-furama">
     <div>
         <center style="color: blue">Furama resort 2022 &copy;</center>
@@ -109,6 +217,7 @@
     <div class="row">
         <div class="col-lg-4">
             <div style="margin-left: 10px">
+                <h5 style="margin-left: 30px">Chi tiết</h5>
                 <div class="col-lg-1" style="float: left">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-geo-alt"
@@ -158,17 +267,24 @@
             </p>
         </div>
         <div class="col-lg-4 details">
-            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <button onclick="topFunction()" id="myBtn" title="Lên đầu trang">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                     class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </button>
             <h5>Liên hệ</h5>
             <p>
-                103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam
-                Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666
+                103 - 105 đường Võ Nguyên Giáp, phường Khuê Mỹ, quận Ngũ Hành Sơn, thành phố Đà Nẵng,
+                SĐT: 84-236-3847 333/888 * Fax: 84-236-3847 666
                 Email: reservation@furamavietnam.com * www.furamavietnam.com GDS Codes: Amadeus-GD DADFUR,
                 Galileo/Apollo-GD 16236, Sabre-GD 032771, Worldspan- GD DADFU
             </p>
         </div>
     </div>
 </div>
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

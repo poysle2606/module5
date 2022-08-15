@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css_file/facility.css">
+    <link rel="stylesheet" href="../css_file/prototype.css">
+</head>
+<body>
+<div id="header-furama">
+    <div id="img-logo">
+        <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" height="70" width="55"
+             style="padding-top: 5px" alt="">
+    </div>
+
+    <div>
+        <img src="../../img/930x150-thienduongresort-2122013.gif" height="120" width="800"
+             style="margin-left: 150px"/>
+    </div>
+</div>
+<div style="margin-top: 3px; position: sticky; top: -1px">
+    <nav class="navbar navbar-expand-lg navbar-primary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active button-function" aria-current="page" href="../home.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active button-function" aria-current="page" href="../facility/list.html">Loại
+                            phòng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active button-function" aria-current="page" href="../customer/list.html">Khách hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active button-function" aria-current="page" href="/customer">Sự kiện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active button-function" aria-current="page" href="/customer">Giải trí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active button-function" aria-current="page" href="/customer">Điểm đến</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active button-function" aria-current="page" href="../contract/list.html">Hợp
+                            đồng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div>
+    <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+    <div>
+        <div class="col-lg-12" style="margin: 0 auto">
+            <h2 style="text-align: center"
+                class="vc_custom_heading font-content">THÊM MỚI HỢP ĐỒNG</h2>
+        </div>
+    </div>
+</div>
+
+<div class="overlay">
+    <form id="form-create" action="" method="post">
+        <div class="con">
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tên khách hàng</td>
+                        <td>
+                            <input class="form-control" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày bắt đầu</td>
+                        <td>
+                            <input class="form-control" type="date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày kết thúc</td>
+                        <td>
+                            <input class="form-control" type="date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tiền đặt cọc</td>
+                        <td>
+                            <input class="form-control" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tiền thanh toán</td>
+                        <td>
+                            <input class="form-control" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary button-option" href="list.html" style="text-decoration: none; margin-top: 10px; margin-bottom: 20px">
+                                Quay lại
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary button-option" style="margin-left: 70px; margin-top: 10px; margin-bottom: 20px" type="submit">
+                                Thêm mới
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="footer-furama">
+    <div>
+        <center style="color: blue">Furama resort 2022 &copy;</center>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div style="margin-left: 10px">
+                <h5 style="margin-left: 30px">Chi tiết</h5>
+                <div class="col-lg-1" style="float: left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-geo-alt"
+                         viewBox="0 0 16 16">
+                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                </div>
+                <div class="col-lg-11" style="float: left">
+                    <p>
+                        103 – 105 Đường Võ Nguyên Giáp, Phường Khuê Mỹ, Quận Ngũ hành Sơn, Tp. Đà Nẵng, Việt Nam
+                    </p>
+                </div>
+            </div>
+            <div style="margin-left: 10px">
+                <div class="col-lg-1" style="float: left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-phone-vibrate" viewBox="0 0 16 16">
+                        <path d="M10 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4zM6 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6z"/>
+                        <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM1.599 4.058a.5.5 0 0 1 .208.676A6.967 6.967 0 0 0 1 8c0 1.18.292 2.292.807 3.266a.5.5 0 0 1-.884.468A7.968 7.968 0 0 1 0 8c0-1.347.334-2.619.923-3.734a.5.5 0 0 1 .676-.208zm12.802 0a.5.5 0 0 1 .676.208A7.967 7.967 0 0 1 16 8a7.967 7.967 0 0 1-.923 3.734.5.5 0 0 1-.884-.468A6.967 6.967 0 0 0 15 8c0-1.18-.292-2.292-.807-3.266a.5.5 0 0 1 .208-.676zM3.057 5.534a.5.5 0 0 1 .284.648A4.986 4.986 0 0 0 3 8c0 .642.12 1.255.34 1.818a.5.5 0 1 1-.93.364A5.986 5.986 0 0 1 2 8c0-.769.145-1.505.41-2.182a.5.5 0 0 1 .647-.284zm9.886 0a.5.5 0 0 1 .648.284C13.855 6.495 14 7.231 14 8c0 .769-.145 1.505-.41 2.182a.5.5 0 0 1-.93-.364C12.88 9.255 13 8.642 13 8c0-.642-.12-1.255-.34-1.818a.5.5 0 0 1 .283-.648z"/>
+                    </svg>
+                </div>
+                <div class="col-lg-11" style="float: left">
+                    <p>
+                        012345678 - để tư vấn
+                    </p>
+                </div>
+            </div>
+            <div style="margin-left: 10px">
+                <div class="col-lg-1" style="float: left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-envelope-paper-heart" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133V2Zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6v-2.55Zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v5.417Zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267v2.55ZM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982Zm7 4.401-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z"/>
+                    </svg>
+                </div>
+                <div class="col-lg-11" style="float: left">
+                    <p>
+                        furama_resort_dn@gmail.com.vn
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <p>
+                <img src="../../img/Ariyana-Tourism-Complex-02-2.png" height="90" width="550"/>
+            </p>
+        </div>
+        <div class="col-lg-4 details">
+            <button onclick="topFunction()" id="myBtn" title="Lên đầu trang">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                     class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </button>
+            <h5>Liên hệ</h5>
+            <p>
+                103 - 105 đường Võ Nguyên Giáp, phường Khuê Mỹ, quận Ngũ Hành Sơn, thành phố Đà Nẵng,
+                SĐT: 84-236-3847 333/888 * Fax: 84-236-3847 666
+                Email: reservation@furamavietnam.com * www.furamavietnam.com GDS Codes: Amadeus-GD DADFUR,
+                Galileo/Apollo-GD 16236, Sabre-GD 032771, Worldspan- GD DADFU
+            </p>
+        </div>
+    </div>
+</div>
+<script src="../../bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+

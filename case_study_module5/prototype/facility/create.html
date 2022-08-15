@@ -28,10 +28,10 @@
                         <a class="nav-link active button-function" aria-current="page" href="../home.html">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="facility.html">Loại phòng</a>
+                        <a class="nav-link active button-function" aria-current="page" href="list.html">Loại phòng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="/customer">Nhân viên</a>
+                        <a class="nav-link active button-function" aria-current="page" href="../customer/list.html">Khách hàng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active button-function" aria-current="page" href="/customer">Sự kiện</a>
@@ -43,7 +43,8 @@
                         <a class="nav-link active button-function" aria-current="page" href="/customer">Điểm đến</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="../contract/contract.html">Hợp đồng</a>
+                        <a class="nav-link active button-function" aria-current="page" href="../contract/list.html">Hợp
+                            đồng</a>
                     </li>
                 </ul>
             </div>
@@ -51,53 +52,202 @@
     </nav>
 </div>
 
+<div>
+    <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+    <div>
+        <div class="col-lg-12" style="margin: 0 auto">
+            <h2 style="text-align: center"
+                class="vc_custom_heading font-content">THÊM MỚI DỊCH VỤ</h2>
+        </div>
+    </div>
+</div>
+
 <div class="overlay">
     <form id="form-create" action="" method="post">
         <div class="con">
-            <header class="form-header">
-                <h2>THÊM MỚI DỊCH VỤ</h2>
-                <hr>
-            </header>
             <div>
                 <table>
-                    <tr  style="margin: 0">
-                        <td>Tên dịch vụ</td>
+                    <tr>
                         <td>
-                            <input class="form-control"  type="text" >
+                            <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span>
+                            </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>Tiện ích</td>
+                        <td>Dịch vụ</td>
                         <td>
-                            <input class="form-control"  type="text" >
+                            <select class="form-control" name="">
+                                <option value="" style="text-align: center" selected>--- Chọn dịch vụ ---</option>
+                                <option value="" style="text-align: center">--- Villa ---</option>
+                                <option value="" style="text-align: center">--- Room ---</option>
+                                <option value="" style="text-align: center">--- House ---</option>
+                            </select>
                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tên dịch vụ</td>
+                        <td>
+                            <input class="form-control" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Diện tích sử dụng</td>
                         <td>
-                            <input class="form-control"  type="text" >
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Giá</td>
-                        <td>
-                            <input class="form-control"  type="text" >
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dịch vụ đi kèm</td>
-                        <td>
-                            <input class="form-control"  type="text" >
+                            <input class="form-control" type="number">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button class="btn btn-outline-primary">
-                                <a href="facility.html" style="text-decoration: none">Quay lại</a>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí thuê</td>
+                        <td>
+                            <input class="form-control" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Số lượng người tối đa</td>
+                        <td>
+                            <input class="form-control" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Kiểu thuê</td>
+                        <td>
+                            <select class="form-control" name="" id="">
+                                <option value="" style="text-align: center" selected>--- Chọn kiểu thuê ---</option>
+                                <option value="" style="text-align: center">--- Năm ---</option>
+                                <option value="" style="text-align: center">--- Tháng ---</option>
+                                <option value="" style="text-align: center">--- Ngày ---</option>
+                                <option value="" style="text-align: center">--- Giờ ---</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tiêu chuẩn phòng</td>
+                        <td>
+                            <input class="form-control" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tiện nghi khác</td>
+                        <td>
+                            <input class="form-control" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Diện tích hồ bơi</td>
+                        <td>
+                            <input class="form-control" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Số tầng</td>
+                        <td>
+                            <input class="form-control" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Dịch vụ miễn phí đi kèm</td>
+                        <td>
+                            <input class="form-control" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vc_empty_space" style="height: 25px">
+                                <span class="vc_empty_space_inner"></span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary button-option" href="list.html" style="text-decoration: none">
+                                Quay lại
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary button-option" style="margin-left: 70px" type="submit">
+                                Tạo mới
                             </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-primary" type="submit">Thêm mới</button>
                         </td>
                     </tr>
                 </table>
@@ -113,6 +263,7 @@
     <div class="row">
         <div class="col-lg-4">
             <div style="margin-left: 10px">
+                <h5 style="margin-left: 30px">Chi tiết</h5>
                 <div class="col-lg-1" style="float: left">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-geo-alt"
@@ -162,11 +313,17 @@
             </p>
         </div>
         <div class="col-lg-4 details">
-            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <button onclick="topFunction()" id="myBtn" title="Lên đầu trang">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                     class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </button>
             <h5>Liên hệ</h5>
             <p>
-                103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam
-                Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666
+                103 - 105 đường Võ Nguyên Giáp, phường Khuê Mỹ, quận Ngũ Hành Sơn, thành phố Đà Nẵng,
+                SĐT: 84-236-3847 333/888 * Fax: 84-236-3847 666
                 Email: reservation@furamavietnam.com * www.furamavietnam.com GDS Codes: Amadeus-GD DADFUR,
                 Galileo/Apollo-GD 16236, Sabre-GD 032771, Worldspan- GD DADFU
             </p>

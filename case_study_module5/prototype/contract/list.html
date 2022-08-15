@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css_file/facility.css">
     <link rel="stylesheet" href="../css_file/prototype.css">
+    <link rel="stylesheet" href="../css_file/contract.css">
 </head>
 <body>
 <div id="header-furama">
@@ -19,7 +19,7 @@
              style="margin-left: 150px"/>
     </div>
 </div>
-<div style="margin-top: 3px; position: sticky; top: -1px">
+<div style="margin-top: 3px; top: -1px">
     <nav class="navbar navbar-expand-lg navbar-primary">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,11 +28,12 @@
                         <a class="nav-link active button-function" aria-current="page" href="../home.html">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="../facility/facility.html">Loại
+                        <a class="nav-link active button-function" aria-current="page" href="../facility/list.html">Loại
                             phòng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="../customer/customer.html">Nhân viên</a>
+                        <a class="nav-link active button-function" aria-current="page" href="../customer/list.html">Khách
+                            hàng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active button-function" aria-current="page" href="/customer">Sự kiện</a>
@@ -44,7 +45,8 @@
                         <a class="nav-link active button-function" aria-current="page" href="/customer">Điểm đến</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active button-function" aria-current="page" href="../contract/contract.html">Hợp đồng</a>
+                        <a class="nav-link active button-function" aria-current="page" href="../contract/list.html">Hợp
+                            đồng</a>
                     </li>
                 </ul>
             </div>
@@ -52,40 +54,161 @@
     </nav>
 </div>
 
-<div class="container">
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="text">HỢP ĐỒNG</h3>
+        <img src="../../img/Exterior_Green_Oasis_Pool_Furama_Danang_Vietnam.jpg" height="400" width="1285"/>
+    </div>
+</div>
+
+<div>
+    <div class="col-lg-12" style="margin: 10px 0 auto">
+        <h1 style="text-align: center" class="vc_custom_heading font-content">DANH SÁCH HỢP ĐỒNG</h1>
+    </div>
+    <div class="col-lg-6" style="margin: 0 auto; text-align: center">
+        <i style="font-size: 18px">
+            Người thành công luôn luôn tìm kiếm cơ hội để giúp đỡ người khác.
+            Những người không thành công luôn hỏi "Tôi được lợi gì?".
+        </i>
+        <div class="vc_empty_space" style="height: 25px"><span class="vc_empty_space_inner"></span></div>
+    </div>
+</div>
+
+<div>
     <center>
-        <h1>DANH SÁCH HƠP ĐỒNG</h1>
+        <a href="../contract/create.html" class="btn btn-primary button-create-contract">Thêm mới hợp đồng</a>
     </center>
-    <table class="table table-striped">
+</div>
+
+<div class="container">
+    <table class="gradient-custom">
         <tr style="text-align: center">
             <th>STT</th>
-            <th>Mã hợp đồng</th>
-            <th>Tên hợp đồng</th>
-            <th>Dịch vụ</th>
-            <th>Nhân viên</th>
+            <th>Số hợp đồng</th>
+            <th>Khách hàng</th>
+            <th>Ngày bắt đầu</th>
+            <th>Ngày kết thúc</th>
             <th>Tiền đặt cọc</th>
+            <th>Tiền thanh toán</th>
             <th>Dịch vụ đi kèm</th>
         </tr>
         <tr style="text-align: center">
             <td>1</td>
-            <td>VL-1111</td>
-            <td>Villa Vip</td>
-            <td>Villa</td>
-            <td>La Thị Bé</td>
-            <td>1.300.000</td>
-            <td>Hồ bơi</td>
+            <td>HD-1111</td>
+            <td>Nguyễn Văn A</td>
+            <td>20-03-2022</td>
+            <td>24-03-2022</td>
+            <td>1000000</td>
+            <td>5000000</td>
+            <td>
+                <a class="btn btn-primary button-option" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </a>
+                <a href="" class="btn btn-primary button-option">
+                    Danh sách dịch vụ đi kèm
+                </a>
+            </td>
         </tr>
         <tr style="text-align: center">
             <td>2</td>
-            <td>RO-1234</td>
-            <td>Room ST2</td>
-            <td>Room</td>
-            <td>Trịnh Duẫn</td>
-            <td>500.000</td>
-            <td>Xe đạp</td>
+            <td>HD-2222</td>
+            <td>Nguyễn Văn B</td>
+            <td>19-05-2022</td>
+            <td>26-05-2022</td>
+            <td>2000000</td>
+            <td>7000000</td>
+            <td>
+                <a class="btn btn-primary button-option" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </a>
+                <a href="" class="btn btn-primary button-option">
+                    Danh sách dịch vụ đi kèm
+                </a>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td>3</td>
+            <td>HD-3333</td>
+            <td>Nguyễn Văn C</td>
+            <td>20-02-2022</td>
+            <td>26-02-2022</td>
+            <td>500000</td>
+            <td>2000000</td>
+            <td>
+                <a class="btn btn-primary button-option" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </a>
+                <a href="" class="btn btn-primary button-option">
+                    Danh sách dịch vụ đi kèm
+                </a>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td>4</td>
+            <td>HD-4444</td>
+            <td>Nguyễn Văn D</td>
+            <td>10-03-2022</td>
+            <td>04-03-2022</td>
+            <td>1000000</td>
+            <td>3000000</td>
+            <td>
+                <a class="btn btn-primary button-option" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </a>
+                <a href="" class="btn btn-primary button-option">
+                    Danh sách dịch vụ đi kèm
+                </a>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td>5</td>
+            <td>HD-5555</td>
+            <td>Nguyễn Văn E</td>
+            <td>10-05-2022</td>
+            <td>14-05-2022</td>
+            <td>3000000</td>
+            <td>6000000</td>
+            <td>
+                <a class="btn btn-primary button-option" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </a>
+                <a href="" class="btn btn-primary button-option">
+                    Danh sách dịch vụ đi kèm
+                </a>
+            </td>
         </tr>
     </table>
 </div>
+
+<div class="paging-customer">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</div>
+
 <div id="footer-furama">
     <div>
         <center style="color: blue">Furama resort 2022 &copy;</center>
@@ -93,6 +216,7 @@
     <div class="row">
         <div class="col-lg-4">
             <div style="margin-left: 10px">
+                <h5 style="margin-left: 30px">Chi tiết</h5>
                 <div class="col-lg-1" style="float: left">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-geo-alt"
@@ -142,17 +266,24 @@
             </p>
         </div>
         <div class="col-lg-4 details">
-            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <button onclick="topFunction()" id="myBtn" title="Lên đầu trang">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                     class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </button>
             <h5>Liên hệ</h5>
             <p>
-                103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam
-                Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666
+                103 - 105 đường Võ Nguyên Giáp, phường Khuê Mỹ, quận Ngũ Hành Sơn, thành phố Đà Nẵng,
+                SĐT: 84-236-3847 333/888 * Fax: 84-236-3847 666
                 Email: reservation@furamavietnam.com * www.furamavietnam.com GDS Codes: Amadeus-GD DADFUR,
                 Galileo/Apollo-GD 16236, Sabre-GD 032771, Worldspan- GD DADFU
             </p>
         </div>
     </div>
 </div>
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

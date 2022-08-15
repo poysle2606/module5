@@ -1,0 +1,95 @@
+.text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-size: 50px;
+  font-family: Playfair Display;
+  font-weight: 600;
+  font-style: normal;
+  padding: 150px 468px 120px;
+  text-shadow: 3px 3px #cbbe73 ;
+}
+
+.card-content {
+  z-index: 0;
+  margin-left: 55px;
+  margin-top: 10px;
+  box-shadow: black;
+}
+
+.font-content {
+  font-size: 24px;
+  color: #cbbe73;
+  line-height: 36px;
+  font-family: Playfair Display;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.button-delete{
+  margin-left: 112px;
+}
+
+.card-content:hover {
+  transform: scale(1.1);
+}
+
+nav{
+  z-index: 10;
+  height: 70px;
+  background-color:deepskyblue;
+}
+
+#form-create {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 43px #3f969e;
+  margin: 2% auto;
+}
+
+.button-create-facility{
+  text-decoration: none;
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  color: blue;
+  background-color: white;
+  font-size: 15px;
+  align-content: center;
+  margin-left: 45%;
+}
+
+.button-create-facility:hover {
+  background-color: blue;
+  color: white;
+  transform: scale(1.1);
+}
+
+.row-row {
+  margin-top: 20px;
+}
+
+td {
+  font-family: Playfair Display;
+  font-weight: 600;
+  font-size: 15px;
+  color: #c9b95f;
+}
+
+.button-option {
+  margin: 10px 20px 30px 40px;
+}
+
+ul li a {
+  font-size: 15px;
+}
+
+.button-function {
+  margin-left: 40px;
+}
+
+.button-function:hover {
+  transform: scale(1.1);
+  color: white;
+}

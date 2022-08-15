@@ -1,0 +1,70 @@
+.text {
+    z-index: 1;
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    font-family: Playfair Display;
+    font-weight: 600;
+    font-style: normal;
+    padding: 150px 450px 120px;
+    text-shadow: 2px 2px #cbbe73 ;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #accbee;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(172, 203, 238, 0.5), rgba(0, 231, 240, 0.5));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(172, 203, 238, 0.5), rgba(0, 231, 240, 0.5));
+
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+
+}
+
+.paging-customer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+th {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.button-option:hover{
+    color: blue;
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.button-create-customer{
+    text-decoration: none;
+    width: 180px;
+    height: 35px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.button-create-contract:hover {
+    background-color: white;
+    color: blue;
+    transform: scale(1.1);
+}
+
+.font-content {
+    font-size: 24px;
+    color: #cbbe73;
+    line-height: 36px;
+    font-family: Playfair Display;
+    font-weight: 700;
+    font-style: normal;
+}
+

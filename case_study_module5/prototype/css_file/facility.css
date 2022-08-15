@@ -1,12 +1,13 @@
 .text {
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     color: white;
     font-size: 50px;
-    font-family: "Playfair Display";
+    font-family: Playfair Display;
     font-weight: 600;
     font-style: normal;
-    padding: 120px 468px 100px;
+    padding: 150px 468px 120px;
+    text-shadow: 3px 3px #cbbe73 ;
 }
 
 .card-content {
@@ -47,36 +48,35 @@ nav{
     margin: 2% auto;
 }
 
-form .con {
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-
-    margin: 0 ;
-}
-
-.con {
-    border-radius: 15px;
-    background-color: rgba(129, 231, 232, 0.36);
-}
-
-.field-set table tr td {
-    font-family: "Bodoni MT Poster Compressed";
-    font-size: 20px;
-}
-
 .button-create-facility{
     text-decoration: none;
     width: 150px;
     height: 35px;
-    margin-top: 10px;
     border-radius: 10px;
-    color: white;
+    color: blue;
+    background-color: white;
     font-size: 15px;
     align-content: center;
 }
+
+.button-create-facility:hover {
+    background-color: blue;
+    color: white;
+    transform: scale(1.1);
+}
+
+.row-row {
+    margin-top: 20px;
+}
+
+td {
+    font-family: Playfair Display;
+    font-weight: 600;
+    font-size: 15px;
+    color: #c9b95f;
+}
+
+.button-option {
+    margin: 10px 20px 30px 40px;
+}
+

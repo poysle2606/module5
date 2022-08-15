@@ -17,17 +17,15 @@
 }
 
 #footer-furama {
+    position: sticky;
     background-color: rgba(129, 231, 232, 0.36);
     margin-top: 5px;
     padding-top: 20px;
-    height: 180px;
+    height: 190px;
 }
 
 .button-function {
     margin-left: 50px;
-}
-
-.button-function {
     color: white;
 }
 
@@ -105,19 +103,23 @@ form .con {
     border-radius: 15px;
     background-color: rgba(129, 231, 232, 0.36);
 }
+
 .field-set table tr td {
     font-family: "Bodoni MT Poster Compressed";
     font-size: 20px;
 }
 
-h5{
-    font-family: Algerian;
+h5 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    font-family: Playfair Display;
 }
 
-nav{
+nav {
     z-index: 10;
     height: 70px;
-    background-color:deepskyblue;
+    background-color: deepskyblue;
 }
 
 ul li a {
@@ -128,9 +130,9 @@ ul li a {
     font-size: 24px;
     color: #cbbe73;
     line-height: 36px;
-    font-family:Playfair Display;
-    font-weight:700;
-    font-style:normal;
+    font-family: Playfair Display;
+    font-weight: 700;
+    font-style: normal;
 }
 
 #myBtn {
@@ -147,10 +149,18 @@ ul li a {
     height: 50px;
     width: 50px;
     left: 320px;
-    bottom: 120px;
+    bottom: 135px;
 }
 
 #myBtn:hover {
     color: royalblue;
     background-color: white; /* Add a dark-grey background on hover */
 }
+
+
+.button-option:hover{
+    color: blue;
+    background-color: white;
+    transform: scale(1.1);
+}
+
