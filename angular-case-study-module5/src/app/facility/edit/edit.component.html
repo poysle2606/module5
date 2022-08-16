@@ -1,42 +1,10 @@
-<div style="margin-top: 3px; position: sticky; top: -1px">
-  <nav class="navbar navbar-expand-lg navbar-primary">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="../home.html">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="list.html">Loại phòng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="../customer/list.html">Khách hàng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="/customer">Sự kiện</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="/customer">Giải trí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="/customer">Điểm đến</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="../contract/list.html">Hợp
-              đồng</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-
+<app-navbar></app-navbar>
 <div>
   <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
   <div>
     <div class="col-lg-12" style="margin: 0 auto">
       <h2 style="text-align: center"
-          class="vc_custom_heading font-content">THÊM MỚI DỊCH VỤ</h2>
+          class="vc_custom_heading font-content">CẬP NHẬT DỊCH VỤ</h2>
     </div>
   </div>
 </div>
@@ -219,13 +187,13 @@
           </tr>
           <tr>
             <td>
-              <a class="btn btn-primary button-option" href="list.html" style="text-decoration: none">
+              <a routerLink="/facility/list" class="btn btn-outline-primary button-option" href="list.html" style="text-decoration: none">
                 Quay lại
               </a>
             </td>
             <td>
-              <button class="btn btn-primary button-option" style="margin-left: 70px" type="submit">
-                Tạo mới
+              <button class="btn btn-success button-option" style="margin-left: 70px" type="submit">
+                Cập nhật
               </button>
             </td>
           </tr>

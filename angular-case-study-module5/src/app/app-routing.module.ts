@@ -6,15 +6,21 @@ import {ListCustomerComponent} from './customer/list-customer/list-customer.comp
 import {ListContractComponent} from './contract/list-contract/list-contract.component';
 import {CreateComponent} from './facility/create/create.component';
 import {EditComponent} from './facility/edit/edit.component';
+import {CreateCustomerComponent} from './customer/create-customer/create-customer.component';
+import {EditCustomerComponent} from './customer/edit-customer/edit-customer.component';
+import {CreateContractComponent} from './contract/create-contract/create-contract.component';
 
 
 const routes: Routes = [
   {path: '', component: BodyComponent},
   {path: 'facility/list', component: ListComponent},
-  {path: 'customer/list', component: ListCustomerComponent},
-  {path: 'contract/list', component: ListContractComponent},
   {path: 'facility/create', component: CreateComponent},
-  {path: 'facility/edit', component: EditComponent}
+  {path: 'facility/edit', component: EditComponent},
+  {path: 'customer/list', component: ListCustomerComponent},
+  {path: 'customer/create', component: CreateCustomerComponent},
+  {path: 'customer/edit', component: EditCustomerComponent},
+  {path: 'contract/list', component: ListContractComponent},
+  {path: 'contract/create', component: CreateContractComponent}
 ];
 
 @NgModule({

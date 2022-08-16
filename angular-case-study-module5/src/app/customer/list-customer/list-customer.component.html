@@ -1,39 +1,4 @@
-<div style="margin-top: 3px; top: -1px">
-  <nav class="navbar navbar-expand-lg navbar-primary">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" routerLink="/" href="">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" routerLink="facility/list" href="">
-              Loại phòng
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="../customer/list.html">Khách
-              hàng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="/customer">Sự kiện</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="/customer">Giải trí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="/customer">Điểm đến</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active button-function" aria-current="page" href="../contract/list.html">Hợp
-              đồng</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-
+<app-navbar-search></app-navbar-search>
 <div class="row">
   <div class="col-lg-12">
     <h3 class="text">KHÁCH HÀNG</h3>
@@ -55,7 +20,7 @@
 </div>
 
 <div>
-    <a href="../customer/create.html" class="btn btn-primary button-create-customer">Thêm mới khách hàng</a>
+    <a routerLink="/customer/create" href="" class="btn btn-primary button-create-customer">Thêm mới khách hàng</a>
 </div>
 
 <div class="container">
@@ -84,7 +49,7 @@
       <td>113,Nguyễn Lương Bằng</td>
       <td>Gold</td>
       <td>
-        <a class="btn btn-primary button-option" href="../customer/edit.html">Sửa</a>
+        <a class="btn btn-primary button-option" routerLink="/customer/edit" href="">Sửa</a>
       </td>
       <td>
         <a href="#" class="btn btn-primary button-option" data-bs-toggle="modal"
@@ -102,8 +67,7 @@
       <td>02, Trường Sơn</td>
       <td>Platinum</td>
       <td>
-        <a class="btn btn-primary button-option"
-           href="../customer/edit.html">Sửa</a>
+        <a class="btn btn-primary button-option" routerLink="/customer/edit" href="">Sửa</a>
       </td>
       <td>
         <a href="#" class="btn btn-primary button-option"
@@ -122,8 +86,7 @@
       <td>K113/02, Chợ Cồn</td>
       <td>Diamond</td>
       <td>
-        <a class="btn btn-primary button-option"
-           href="../customer/edit.html">Sửa</a>
+        <a class="btn btn-primary button-option" routerLink="/customer/edit" href="">Sửa</a>
       </td>
       <td>
         <a href="#" class="btn btn-primary button-option"
@@ -142,8 +105,7 @@
       <td>104, Trần Thị Lý</td>
       <td>Member</td>
       <td>
-        <a class="btn btn-primary button-option"
-           href="../customer/edit.html">Sửa</a>
+        <a class="btn btn-primary button-option" routerLink="/customer/edit" href="">Sửa</a>
       </td>
       <td>
         <a href="#" class="btn btn-primary button-option"
@@ -162,8 +124,7 @@
       <td>K02, Hòn Côn</td>
       <td>Silver</td>
       <td>
-        <a class="btn btn-primary button-option"
-           href="../customer/edit.html">Sửa</a>
+        <a class="btn btn-primary button-option" routerLink="/customer/edit" href="">Sửa</a>
       </td>
       <td>
         <a href="#" class="btn btn-primary button-option"
