@@ -1,0 +1,24 @@
+.footer {
+  height: 100px;
+  background-color: gray;
+}
+
+.right-footer {
+  float: left;
+  margin-left: 20px;
+  width: 33%;
+}
+
+p {
+  font-weight: 500;
+  font-size: 13px;
+  color: white;
+}
+
+.center-footer {
+  text-align: center;
+  float: left;
+  width: 33%;
+  height: 100%;
+}
+

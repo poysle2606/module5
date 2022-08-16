@@ -1,0 +1,18 @@
+#table-infor {
+  width: 400px;
+  height: auto;
+  margin-left: 320px;
+}
+
+#btn-add {
+  margin-left: 240px;
+  width: 60px;
+  height: 30px;
+  background-color: darkgray;
+  border-style: none;
+}
+
+#btn-add:hover {
+  background-color: wheat;
+  color: white;
+}

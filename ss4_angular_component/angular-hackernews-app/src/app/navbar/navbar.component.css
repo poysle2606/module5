@@ -1,0 +1,41 @@
+#cross-side {
+  height: 70px;
+  width: 100%;
+  background-color: gray;
+}
+
+.btn {
+  float: left;
+  margin-left: 40px;
+  margin-top: 15px;
+}
+
+button {
+  height: 40px;
+  width: 80px;
+  align-content: center;
+  background-color: gray;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  color: black;
+  background-color: tomato;
+  transform: scale(1.2);
+}
+
+#search {
+  width: 250px;
+  height: 40px;
+  border-radius: 15px;
+  border-style: none;
+  margin-top: 10px;
+  margin-left: 290px;
+  box-shadow: 0 0 0 2px green;
+}
+
+#btn-search {
+  margin-left: 10px;
+  border-style: none;
+}
