@@ -29,11 +29,14 @@ export class CreateCustomerComponent implements OnInit {
 
   submit() {
     const customer = this.customerForm.value;
-    // this.customerService.save(customer);
+    this.customerService.save(customer);
     this.customerForm.reset();
   }
 
   ngOnInit(): void {
+    this.getCustomerType();
+  }
+  getCustomerType() {
     this.customerTypeList = this.customerTypeService.getAll();
   }
 }

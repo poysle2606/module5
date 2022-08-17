@@ -6,16 +6,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
-import { ListComponent } from './facility/list/list.component';
-import { CreateComponent } from './facility/create/create.component';
-import { EditComponent } from './facility/edit/edit.component';
+import { ListComponent } from './facility/component/list/list.component';
+import { CreateComponent } from './facility/component/create/create.component';
+import { EditComponent } from './facility/component/edit/edit.component';
 import { ListCustomerComponent } from './customer/component/list-customer/list-customer.component';
 import { CreateCustomerComponent } from './customer/component/create-customer/create-customer.component';
 import { EditCustomerComponent } from './customer/component/edit-customer/edit-customer.component';
-import { ListContractComponent } from './contract/list-contract/list-contract.component';
-import { CreateContractComponent } from './contract/create-contract/create-contract.component';
+import { ListContractComponent } from './contract/component/list-contract/list-contract.component';
+import { CreateContractComponent } from './contract/component/create-contract/create-contract.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import { NavbarSearchComponent } from './navbar-search/navbar-search.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NavbarSearchComponent } from './navbar-search/navbar-search.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

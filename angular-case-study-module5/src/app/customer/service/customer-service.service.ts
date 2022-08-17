@@ -6,7 +6,7 @@ import {Customer} from '../model/customer';
 })
 export class CustomerServiceService {
 
-  listCustomer: Customer[];
+  listCustomer: Customer[] = [];
 
   constructor() {
     this.listCustomer.push({
@@ -17,7 +17,7 @@ export class CustomerServiceService {
       numberPhone: '093423489',
       email: 'nguyenA1998@gmail.com',
       address: 'Đà Nẵng',
-      typeCustomer: 'Gold'
+      typeCustomer: {id: 1, nameType: 'Diamond'}
     });
     this.listCustomer.push({
       name: 'Lê Thị B',
@@ -27,7 +27,7 @@ export class CustomerServiceService {
       numberPhone: '012423231',
       email: 'leB1978@gmail.com',
       address: 'Thái Bình',
-      typeCustomer: 'Platinum'
+      typeCustomer:  {id: 2, nameType: 'Platinum'}
     });
     this.listCustomer.push({
       name: 'Nguyễn Văn C',
@@ -37,7 +37,7 @@ export class CustomerServiceService {
       numberPhone: '092423444',
       email: 'nguyenC1989@gmail.com',
       address: 'Gia Lai',
-      typeCustomer: 'Diamond'
+      typeCustomer:  {id: 3, nameType: 'Gold'}
     });
     this.listCustomer.push({
       name: 'Nguyễn Thị D',
@@ -47,7 +47,7 @@ export class CustomerServiceService {
       numberPhone: '083452358',
       email: 'nguyenD1982@gmail.com',
       address: 'Huế',
-      typeCustomer: 'Member'
+      typeCustomer: {id: 1, nameType: 'Platinum'}
     });
     this.listCustomer.push({
       name: 'Trần Văn E',
@@ -57,7 +57,7 @@ export class CustomerServiceService {
       numberPhone: '093423870',
       email: 'tranE1995@gmail.com',
       address: 'Đà Nẵng',
-      typeCustomer: 'Silver'
+      typeCustomer:  {id: 1, nameType: 'Platinum'}
     });
   }
 
@@ -65,7 +65,8 @@ export class CustomerServiceService {
     return this.listCustomer;
   }
 
-  // save(customer) {
-  //   this.listCustomer.push(customer);
-  // }
+  save(customer) {
+    this.listCustomer.push(customer);
+  }
+
 }

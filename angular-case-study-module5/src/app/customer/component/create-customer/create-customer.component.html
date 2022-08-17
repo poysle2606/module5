@@ -10,7 +10,7 @@
 </div>
 
 <div class="overlay">
-  <form id="form-create" action="" method="post">
+  <form id="form-create" [formGroup]="customerForm" (ngSubmit)="submit()" >
     <div class="con">
       <div>
         <table>
@@ -21,9 +21,23 @@
             </td>
           </tr>
           <tr>
+            <td>Id</td>
+            <td>
+              <input type="number" class="form-control" formControlName="id">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
             <td>Tên khách hàng</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="name">
             </td>
           </tr>
           <tr>
@@ -37,7 +51,7 @@
           <tr>
             <td>Ngày sinh</td>
             <td>
-              <input class="form-control" type="date">
+              <input class="form-control" type="date" formControlName="dayOfBirth">
             </td>
           </tr>
           <tr>
@@ -51,10 +65,10 @@
           <tr>
             <td>Giới tính</td>
             <td>
-              <select class="form-control" name="">
-                <option style="text-align: center" value="" selected>-- Chọn giới tính --</option>
-                <option style="text-align: center" value="">Nam</option>
-                <option style="text-align: center" value="">Nữ</option>
+              <select class="form-control" name="" formControlName="gender">
+                <option [ngValue]="null" style="text-align: center" selected>-- Chọn giới tính --</option>
+                <option style="text-align: center" [ngValue]="0">Nam</option>
+                <option style="text-align: center" [ngValue]="1">Nữ</option>
               </select>
             </td>
           </tr>
@@ -69,7 +83,7 @@
           <tr>
             <td>Số CMND </td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="idCard">
             </td>
           </tr>
           <tr>
@@ -83,7 +97,7 @@
           <tr>
             <td>Số điện thoại</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="numberPhone">
             </td>
           </tr>
           <tr>
@@ -97,7 +111,7 @@
           <tr>
             <td>Email</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="email">
             </td>
           </tr>
           <tr>
@@ -111,7 +125,7 @@
           <tr>
             <td>Địa chỉ</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="address">
             </td>
           </tr>
           <tr>
@@ -125,13 +139,9 @@
           <tr>
             <td>Loại khách</td>
             <td>
-              <select class="form-control" name="" id="">
-                <option style="text-align: center" value="" selected>-- Chọn loại khách --</option>
-                <option value="" style="text-align: center">Diamond</option>
-                <option value="" style="text-align: center">Platinum</option>
-                <option value="" style="text-align: center">Gold</option>
-                <option value="" style="text-align: center">Silver</option>
-                <option value="" style="text-align: center">Member</option>
+              <select class="form-control"  formControlName="typeCustomer">
+                <option [ngValue]="null" selected style="text-align: center" >--Chọn loại khách--</option>
+                <option *ngFor="let item of customerTypeList" [ngValue]="item" style="text-align: center" >{{item.nameType}}</option>
               </select>
             </td>
           </tr>
