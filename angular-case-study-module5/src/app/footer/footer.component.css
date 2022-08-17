@@ -1,7 +1,6 @@
 #footer-furama {
   position: sticky;
   background-color: rgba(129, 231, 232, 0.36);
-  margin-top: 5px;
   padding-top: 20px;
   height: 190px;
 }
@@ -13,4 +12,21 @@ h5 {
   font-family: Playfair Display;
 }
 
+#footer-content {
+  color: blue;
+  text-align: center;
+  margin-top: 35px;
+  font-size: 15px;
+}
+
+.on-top {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  background-color: deepskyblue;
+  border-style: none;
+  color: white;
+  margin-left: 300px;
+}
 

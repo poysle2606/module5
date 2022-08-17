@@ -1,11 +1,8 @@
 <app-navbar-search></app-navbar-search>
-<div class="row">
-  <div class="col-lg-12">
-    <h3 class="text">LOẠI PHÒNG</h3>
-    <img src="../assets/banner01.jpg" height="400" width="1285"/>
-  </div>
+<div>
+  <h3 class="text">LOẠI PHÒNG</h3>
+  <img src="../assets/banner01.jpg" height="400" width="1263"/>
 </div>
-
 <div>
   <div class="col-lg-12" style="margin: 10px 0 auto">
     <h2 style="text-align: center"
@@ -20,107 +17,48 @@
 </div>
 
 <div>
-    <a routerLink="/facility/create" href="" class="btn btn-primary button-create-facility">Thêm mới dịch vụ</a>
+  <a routerLink="/facility/create" href="" class="btn btn-primary button-create-facility">Thêm mới dịch vụ</a>
 </div>
 
 <div class="container">
   <div class="vc_empty_space" style="height: 16px"><span class="vc_empty_space_inner"></span></div>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-4" *ngFor="let item of listFacility, index as i">
       <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem">
         <img src="../assets/Vietnam_Danang_Furama_Ocean-Deluxe-double-bed-F-370x239.jpg" width="120"
              height="170" class="card-img-top" alt="...">
         <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
+          <b class="card-title">{{item.nameFacility}}</b>
+          <p class="card-text">Diện tích phòng: {{item.area}}m</p>
+          <p class="card-text">Chi phí thuê: {{item.rentalCosts}} VND</p>
           <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
-        </div>
-      </div>
-      <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem;">
-        <img src="../assets/card1.jpg" class="card-img-top" width="120" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
-        </div>
-      </div>
-      <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem;">
-        <img src="../assets/card2.jpg" class="card-img-top" width="120" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">
+            Xóa
+          </button>
         </div>
       </div>
     </div>
-    <div class="col-lg-4">
-      <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem;">
-        <img src="../assets/card3.jpg" class="card-img-top" width="120" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Chú ý!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class=".">
+          <p style="font-size: 15px; font-weight: 600"> Bạn có muốn xóa</p>
         </div>
       </div>
-      <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem;">
-        <img src="../assets/card4.jpg" class="card-img-top" width="120" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5msup2;</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
-        </div>
-      </div>
-      <div class="card card-content shadow mb-5 bg-body rounded " style="width: 16rem;">
-        <img src="../assets/card5.jpg" class="card-img-top" width="120" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem;">
-        <img src="../assets/card6.jpg" class="card-img-top" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
-        </div>
-      </div>
-      <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem;">
-        <img src="../assets/card7.jpg" class="card-img-top" width="120" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
-        </div>
-      </div>
-      <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem;">
-        <img src="../assets/card8.jpg" class="card-img-top" width="120" height="170" alt="...">
-        <div class="card-body">
-          <b class="card-title">Phòng Suilt hướng biển</b>
-          <p class="card-text">Diện tích phòng: 85.5m</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
-          <a href="#" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-             data-bs-target="#exampleModal">Xóa</a>
-        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-danger">Xóa</button>
       </div>
     </div>
   </div>
@@ -141,4 +79,5 @@
     </div>
   </div>
 </div>
+
 

@@ -1,9 +1,7 @@
 <app-navbar-search></app-navbar-search>
-<div class="row">
-  <div class="col-lg-12">
-    <h3 class="text">HỢP ĐỒNG</h3>
-    <img src="../assets/Exterior_Green_Oasis_Pool_Furama_Danang_Vietnam.jpg" height="400" width="1263"/>
-  </div>
+<div>
+  <h3 class="text">HỢP ĐỒNG</h3>
+  <img src="../assets/Exterior_Green_Oasis_Pool_Furama_Danang_Vietnam.jpg" height="400" width="1263"/>
 </div>
 
 <div>
@@ -20,11 +18,12 @@
 </div>
 
 <div align="center">
-    <a routerLink="/contract/create" href="" class="btn btn-primary button-create-contract">Thêm mới hợp đồng</a>
+  <a routerLink="/contract/create" href="" class="btn btn-primary button-create-contract">Thêm mới hợp đồng</a>
 </div>
 
 <div class="container">
   <table class="gradient-custom">
+    <thead>
     <tr style="text-align: center">
       <th>STT</th>
       <th>Số hợp đồng</th>
@@ -35,19 +34,22 @@
       <th>Tiền thanh toán</th>
       <th>Dịch vụ đi kèm</th>
     </tr>
+    </thead>
+    <tbody *ngFor="let contract of listContract, index as i">
     <tr style="text-align: center">
-      <td>1</td>
-      <td>HD-1111</td>
-      <td>Nguyễn Văn A</td>
-      <td>20-03-2022</td>
-      <td>24-03-2022</td>
-      <td>1000000</td>
-      <td>5000000</td>
+      <td>{{i + 1}}</td>
+      <td>{{contract.codeContract}}</td>
+      <td>{{contract.customerName}}</td>
+      <td>{{contract.startDay}}</td>
+      <td>{{contract.endDay}}</td>
+      <td>{{contract.cost}}</td>
+      <td>{{contract.total}}</td>
       <td>
         <a class="btn btn-primary button-option" href="">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                class="bi bi-plus" viewBox="0 0 16 16">
-            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
           </svg>
         </a>
         <a href="" class="btn btn-primary button-option">
@@ -55,100 +57,20 @@
         </a>
       </td>
     </tr>
-    <tr style="text-align: center">
-      <td>2</td>
-      <td>HD-2222</td>
-      <td>Nguyễn Văn B</td>
-      <td>19-05-2022</td>
-      <td>26-05-2022</td>
-      <td>2000000</td>
-      <td>7000000</td>
-      <td>
-        <a class="btn btn-primary button-option" href="">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-plus" viewBox="0 0 16 16">
-            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-          </svg>
-        </a>
-        <a href="" class="btn btn-primary button-option">
-          Danh sách dịch vụ đi kèm
-        </a>
-      </td>
-    </tr>
-    <tr style="text-align: center">
-      <td>3</td>
-      <td>HD-3333</td>
-      <td>Nguyễn Văn C</td>
-      <td>20-02-2022</td>
-      <td>26-02-2022</td>
-      <td>500000</td>
-      <td>2000000</td>
-      <td>
-        <a class="btn btn-primary button-option" href="">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-plus" viewBox="0 0 16 16">
-            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-          </svg>
-        </a>
-        <a href="" class="btn btn-primary button-option">
-          Danh sách dịch vụ đi kèm
-        </a>
-      </td>
-    </tr>
-    <tr style="text-align: center">
-      <td>4</td>
-      <td>HD-4444</td>
-      <td>Nguyễn Văn D</td>
-      <td>10-03-2022</td>
-      <td>04-03-2022</td>
-      <td>1000000</td>
-      <td>3000000</td>
-      <td>
-        <a class="btn btn-primary button-option" href="">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-plus" viewBox="0 0 16 16">
-            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-          </svg>
-        </a>
-        <a href="" class="btn btn-primary button-option">
-          Danh sách dịch vụ đi kèm
-        </a>
-      </td>
-    </tr>
-    <tr style="text-align: center">
-      <td>5</td>
-      <td>HD-5555</td>
-      <td>Nguyễn Văn E</td>
-      <td>10-05-2022</td>
-      <td>14-05-2022</td>
-      <td>3000000</td>
-      <td>6000000</td>
-      <td>
-        <a class="btn btn-primary button-option" href="">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-plus" viewBox="0 0 16 16">
-            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-          </svg>
-        </a>
-        <a href="" class="btn btn-primary button-option">
-          Danh sách dịch vụ đi kèm
-        </a>
-      </td>
-    </tr>
+    </tbody>
   </table>
 </div>
 
 <div class="paging-customer">
   <ul class="pagination justify-content-center">
     <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Trước</a>
     </li>
     <li class="page-item"><a class="page-link" href="#">1</a></li>
     <li class="page-item"><a class="page-link" href="#">2</a></li>
     <li class="page-item"><a class="page-link" href="#">3</a></li>
     <li class="page-item">
-      <a class="page-link" href="#">Next</a>
+      <a class="page-link" href="#">Sau</a>
     </li>
   </ul>
 </div>
-
