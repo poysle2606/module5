@@ -1,0 +1,152 @@
+<div class="container">
+  <form [formGroup]="formRegister" (ngSubmit)="onSubmit()" >
+    <h2 class="text-center">Form Đăng kí</h2>
+    <table>
+      <tr>
+        <td>Tên đăng nhập</td>
+        <td>
+          <input type="text" placeholder="Tên đăng nhập" formControlName="userName" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 30px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="formRegister.controls.userName.hasError('required') && formRegister.touched">Không được để trống</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Mật khẩu</td>
+        <td>
+          <input type="password" placeholder="Mật khẩu" formControlName="passWord" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 25px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="formRegister.controls.passWord.hasError('required') && formRegister.touched">Không được để trống</span>
+          <span style="color: red" *ngIf="formRegister.controls.passWord.hasError('maxlength') && formRegister.touched">Không được dài quá 6 kí tự </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Xác nhận lại mật khẩu</td>
+        <td>
+          <input type="password" placeholder="Xác nhận lại mật khẩu" formControlName="passWordAgain" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 25px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="formRegister.controls.passWordAgain.hasError('required') && formRegister.touched">Không được để trống </span>
+          <span style="color: red" *ngIf="formRegister.controls.passWordAgain.hasError('maxlength') && formRegister.touched">Không được dài quá 6 kí tự </span>
+          <span style="color: red" *ngIf="formRegister.hasError('invalid') && formRegister.touched"> Mật khẩu sai</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="text" placeholder="Email" formControlName="email" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 25px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="formRegister.controls.email.hasError('required') && formRegister.touched">Không được để trống</span>
+
+          <span style="color: red" *ngIf="formRegister.controls.email.hasError('email') && formRegister.touched">abc@gmail.com  </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Quốc gia</td>
+        <td >
+          <select name="" id="" class="form-control" formControlName="country" >
+            <option [ngValue]="null" value="" selected>Chọn quốc gia</option>
+            <option value="">Việt Nam</option>
+            <option value="">Mỹ</option>
+            <option value="">Nhật Bản</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 25px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tuổi</td>
+        <td>
+          <input required="required" type="number" placeholder="Tuổi" class="form-control" formControlName="age">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 25px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="formRegister.controls.age.hasError('required') && formRegister.touched">Không được để trống</span>
+          <span style="color: red" *ngIf="formRegister.controls.age.hasError('min') && formRegister.touched">Tuổi dưới 18 kìa ba!</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Giới tính</td>
+        <td>
+          <input formControlName="gender" type="radio" value="Nam"> Nam
+          <input formControlName="gender" type="radio" value="Nữ"> Nữ
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 25px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="formRegister.controls.age.hasError('required') && formRegister.touched">Không được để trống</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Số điện thoại</td>
+        <td>
+          <input formControlName="phone" type="number" placeholder="Số điện thoại" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="vc_empty_space" style="height: 25px">
+            <span class="vc_empty_space_inner"></span>
+          </div>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="formRegister.controls.phone.hasError('pattern') && formRegister.touched">Nhập sai định dạng</span>
+          <span style="color: red" *ngIf="formRegister.controls.phone.hasError('required') && formRegister.touched">Không được để trống</span>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="submit" class="btn btn-primary">Tạo tài khoản</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

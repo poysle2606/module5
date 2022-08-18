@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CustomerType} from '../../model/customet-type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerServiceService} from '../../service/customer-service.service';
@@ -12,7 +12,7 @@ import {CustomerTypeServiceService} from '../../service/customer-type-service.se
 export class CreateCustomerComponent implements OnInit {
   customerForm: FormGroup = new FormGroup({
     id: new FormControl(),
-    name: new FormControl('', [Validators.required, Validators.pattern('a')]),
+    name: new FormControl('', [Validators.required]),
     dayOfBirth: new FormControl(),
     gender: new FormControl(),
     idCard: new FormControl(),
@@ -36,6 +36,7 @@ export class CreateCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.getCustomerType();
   }
+
   getCustomerType() {
     this.customerTypeList = this.customerTypeService.getAll();
   }
