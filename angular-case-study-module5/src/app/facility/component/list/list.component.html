@@ -31,10 +31,14 @@
           <b class="card-title">{{item.nameFacility}}</b>
           <p class="card-text">Diện tích phòng: {{item.area}}m</p>
           <p class="card-text">Chi phí thuê: {{item.rentalCosts}} VND</p>
-          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary">Sửa</a>
+          <a routerLink="/facility/edit" href="" class="btn btn-outline-primary" [routerLink]="['/facility/edit', item.id]">Sửa</a>
+          <button type="button" class="btn btn-outline-success button-detail-delete" data-bs-toggle="modal"
+                  data-bs-target="#viewModal" (click)="openFacility(item)">
+            Chi tiết
+          </button>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-outline-danger button-delete" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-outline-danger button-detail-delete" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal" (click)="openFacility(item)">
             Xóa
           </button>
         </div>
@@ -53,16 +57,50 @@
       </div>
       <div class="modal-body">
         <div class=".">
-          <p style="font-size: 15px; font-weight: 600"> Bạn có muốn xóa</p>
+          <p style="font-size: 15px; font-weight: 600"> Bạn có muốn xóa {{nameFacility}} không?</p>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        <button type="button" class="btn btn-danger">Xóa</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete(idFacility)">Xóa</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="#viewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewModalLabel">Thông tin chi tiết</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class=".">
+          <table>
+            <tr>
+              <td>Loại dịch vụ: </td>
+              <td>{{facilityTypeS.name}}</td>
+            </tr>
+            <tr>
+              <td>Tên dịch vụ: </td>
+              <td>{{nameFacility}}</td>
+            </tr>
+            <tr>
+              <td>Giá: </td>
+              <td>{{rentalCosts}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
   <div>

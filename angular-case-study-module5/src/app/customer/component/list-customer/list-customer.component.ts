@@ -11,7 +11,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./list-customer.component.css']
 })
 export class ListCustomerComponent implements OnInit {
-  customerForm: FormGroup = new FormGroup({});
+  idDelete: number;
+  nameDelete: string;
+  idCardDelete: number;
 
   constructor(private customerService: CustomerServiceService, private customerTypeService: CustomerTypeServiceService) {
   }
@@ -21,5 +23,16 @@ export class ListCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.listCustomer = this.customerService.getAll();
 
+  }
+
+  openDelete(customer: Customer) {
+    this.idDelete = customer.id;
+    this.nameDelete = customer.name;
+    this.idCardDelete = customer.idCard;
+  }
+
+  delete(idDelete: number) {
+    this.customerService.delete(idDelete);
+    this.ngOnInit();
   }
 }

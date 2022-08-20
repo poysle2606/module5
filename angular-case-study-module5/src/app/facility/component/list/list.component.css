@@ -26,12 +26,11 @@
   font-style: normal;
 }
 
-.button-delete {
-  margin-left: 112px;
-}
-
 .card-content:hover {
   transform: scale(1.1);
+}
+.button-detail-delete {
+  margin-left: 20px;
 }
 
 #form-create {

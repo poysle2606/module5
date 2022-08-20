@@ -10,7 +10,7 @@
 </div>
 
 <div class="overlay">
-  <form id="form-create" action="" method="post">
+  <form id="form-create" [formGroup]="formContract" (ngSubmit)="submitContract()">
     <div class="con">
       <div>
         <table>
@@ -23,7 +23,11 @@
           <tr>
             <td>Tên khách hàng</td>
             <td>
-              <input class="form-control" type="text">
+              <select class="form-control" formControlName="typeCustomer">
+                <option [ngValue]="null" disabled selected style="text-align: center">--Chọn loại khách--</option>
+                <option *ngFor="let item of listCustomer" [ngValue]="item"
+                        style="text-align: center">{{item.name}}</option>
+              </select>
             </td>
           </tr>
           <tr>
@@ -65,7 +69,7 @@
           <tr>
             <td>Tiền đặt cọc</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="cost">
             </td>
           </tr>
           <tr>
@@ -74,12 +78,22 @@
                 <span class="vc_empty_space_inner"></span>
               </div>
             </td>
-            <td></td>
+            <td>
+              <span style="color: red" *ngIf="formContract.controls.cost.hasError('required')
+                  && formContract.touched">
+                Thông tin trống
+              </span>
+              <span style="color: red"
+                    *ngIf="formContract.controls.cost.hasError('pattern')
+                    && formContract.touched">
+               Phải nhập số dương
+              </span>
+            </td>
           </tr>
           <tr>
             <td>Tiền thanh toán</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="total">
             </td>
           </tr>
           <tr>
@@ -88,16 +102,28 @@
                 <span class="vc_empty_space_inner"></span>
               </div>
             </td>
-            <td></td>
+            <td>
+              <span style="color: red" *ngIf="formContract.controls.total.hasError('required')
+                   && formContract.touched">
+                Thông tin trống
+              </span>
+              <span style="color: red"
+                    *ngIf="formContract.controls.total.hasError('pattern')
+                    && formContract.touched">
+               Phải nhập số dương
+              </span>
+            </td>
           </tr>
           <tr>
             <td>
-              <a class="btn btn-outline-primary button-option" routerLink="/contract/list" href="" style="text-decoration: none; margin-top: 10px; margin-bottom: 20px">
+              <a class="btn btn-outline-primary button-option" routerLink="/contract/list" href=""
+                 style="text-decoration: none; margin-top: 10px; margin-bottom: 20px">
                 Quay lại
               </a>
             </td>
             <td>
-              <button class="btn btn-success button-option" style="margin-left: 70px; margin-top: 10px; margin-bottom: 20px" type="submit">
+              <button [disabled]="!formContract.valid" class="btn btn-success button-option"
+                      style="margin-left: 70px; margin-top: 10px; margin-bottom: 20px" type="submit">
                 Thêm mới
               </button>
             </td>

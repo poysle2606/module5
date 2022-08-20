@@ -10,7 +10,7 @@
 </div>
 
 <div class="overlay">
-  <form id="form-create" action="" method="post">
+  <form id="form-create" [formGroup]="customerForm" (ngSubmit)="updateCustomer(id)">
     <div class="con">
       <div>
         <table>
@@ -21,9 +21,9 @@
             </td>
           </tr>
           <tr>
-            <td>Tên khách hàng</td>
+            <td>Id</td>
             <td>
-              <input class="form-control" type="text">
+              <input type="number" class="form-control" formControlName="id">
             </td>
           </tr>
           <tr>
@@ -32,12 +32,31 @@
                 <span class="vc_empty_space_inner"></span>
               </div>
             </td>
-            <td></td>
+            <td>
+              <span style="color: red" *ngIf="customerForm.controls.id.hasError('required') && customerForm.touched">Thông tin trống</span>
+              <span style="color: red" *ngIf="customerForm.controls.id.hasError('minlength') && customerForm.touched">Tối đa 6 số thôi!</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Tên khách hàng</td>
+            <td>
+              <input class="form-control" type="text" formControlName="name">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td>
+              <span style="color: red" *ngIf="customerForm.controls.name.hasError('required') && customerForm.touched">Thông tin trống</span>
+            </td>
           </tr>
           <tr>
             <td>Ngày sinh</td>
             <td>
-              <input class="form-control" type="date">
+              <input class="form-control" type="date" formControlName="dayOfBirth">
             </td>
           </tr>
           <tr>
@@ -51,9 +70,10 @@
           <tr>
             <td>Giới tính</td>
             <td>
-              <select class="form-control" name="">
-                <option style="text-align: center" value="">Nam</option>
-                <option style="text-align: center" value="">Nữ</option>
+              <select class="form-control" name="" formControlName="gender">
+                <option [ngValue]="null" selected style="text-align: center">-- Chọn giới tính --</option>
+                <option style="text-align: center" [ngValue]="0">Nam</option>
+                <option style="text-align: center" [ngValue]="1">Nữ</option>
               </select>
             </td>
           </tr>
@@ -66,9 +86,9 @@
             <td></td>
           </tr>
           <tr>
-            <td>Số CMND </td>
+            <td>Số CMND</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="idCard">
             </td>
           </tr>
           <tr>
@@ -77,12 +97,16 @@
                 <span class="vc_empty_space_inner"></span>
               </div>
             </td>
-            <td></td>
+            <td>
+              <span style="color: red"
+                    *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.touched">Thông tin trống</span>
+              <span style="color: red" *ngIf="customerForm.controls.idCard.hasError('pattern') && customerForm.touched">Sai định dạng</span>
+            </td>
           </tr>
           <tr>
             <td>Số điện thoại</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="text" formControlName="numberPhone">
             </td>
           </tr>
           <tr>
@@ -91,12 +115,17 @@
                 <span class="vc_empty_space_inner"></span>
               </div>
             </td>
-            <td></td>
+            <td>
+              <span style="color: red"
+                    *ngIf="customerForm.controls.numberPhone.hasError('required') && customerForm.touched">Thông tin trống</span>
+              <span style="color: red"
+                    *ngIf="customerForm.controls.numberPhone.hasError('pattern') && customerForm.touched">Sai định dạng</span>
+            </td>
           </tr>
           <tr>
             <td>Email</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="email">
             </td>
           </tr>
           <tr>
@@ -105,12 +134,15 @@
                 <span class="vc_empty_space_inner"></span>
               </div>
             </td>
-            <td></td>
+            <td>
+              <span style="color: red" *ngIf="customerForm.controls.email.hasError('email ') && customerForm.touched">abc@Gmail.com</span>
+              <span style="color: red" *ngIf="customerForm.controls.email.hasError('required') && customerForm.touched">Thông tin trống</span>
+            </td>
           </tr>
           <tr>
             <td>Địa chỉ</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="address">
             </td>
           </tr>
           <tr>
@@ -119,29 +151,30 @@
                 <span class="vc_empty_space_inner"></span>
               </div>
             </td>
-            <td></td>
+            <td>
+              <span style="color: red"
+                    *ngIf="customerForm.controls.address.hasError('required') && customerForm.touched">Thông tin trống</span>
+            </td>
           </tr>
           <tr>
             <td>Loại khách</td>
             <td>
-              <select class="form-control" name="" id="">
-                <option value="" style="text-align: center">Diamond</option>
-                <option value="" style="text-align: center">Platinum</option>
-                <option value="" style="text-align: center">Gold</option>
-                <option value="" style="text-align: center">Silver</option>
-                <option value="" style="text-align: center">Member</option>
+              <select class="form-control" formControlName="typeCustomer">
+                <option *ngFor="let item of customerTypeList" [ngValue]="item"
+                        style="text-align: center">{{item.nameType}}</option>
               </select>
-            </td>
-          </tr>
+              </td>
+            </tr>
           <tr>
             <td>
-              <a class="btn btn-outline-primary button-option" routerLink="/customer/list" href="" style="text-decoration: none; margin-top: 20px">
+              <a class="btn btn-outline-primary button-option" routerLink="/customer/list" href=""
+                 style="text-decoration: none; margin-top: 20px">
                 Quay lại
               </a>
             </td>
             <td>
-              <button class="btn btn-success button-option" style="margin-left: 90px; margin-top: 20px" type="submit">Cập
-                nhật
+              <button class="btn btn-success button-option" [disabled]="!customerForm.valid" style="margin-left: 70px; margin-top: 20px" type="submit">
+                Cập nhật
               </button>
             </td>
           </tr>
@@ -150,4 +183,5 @@
     </div>
   </form>
 </div>
+
 

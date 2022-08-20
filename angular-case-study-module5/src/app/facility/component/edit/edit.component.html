@@ -10,7 +10,7 @@
 </div>
 
 <div class="overlay">
-  <form id="form-create" action="" method="post">
+  <form id="form-create" [formGroup]="editFacilityForm" (ngSubmit)="updateFacility(id)">
     <div class="con">
       <div>
         <table>
@@ -23,11 +23,9 @@
           <tr>
             <td>Dịch vụ</td>
             <td>
-              <select class="form-control" name="">
-                <option value="" style="text-align: center" selected>--- Chọn dịch vụ ---</option>
-                <option value="" style="text-align: center">--- Villa ---</option>
-                <option value="" style="text-align: center">--- Room ---</option>
-                <option value="" style="text-align: center">--- House ---</option>
+              <select class="form-control" name="" formControlName="facility" (change)="changeFacility($event.target.value)">
+                <option [ngValue]="null" style="text-align: center" disabled selected>--- Chọn dịch vụ ---</option>
+                <option *ngFor="let item of facilityTypeList" [value]="item.name" style="text-align: center" >{{item.name}}</option>
               </select>
             </td>
           </tr>
@@ -42,7 +40,7 @@
           <tr>
             <td>Tên dịch vụ</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="nameFacility">
             </td>
           </tr>
           <tr>
@@ -56,7 +54,7 @@
           <tr>
             <td>Diện tích sử dụng</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="area">
             </td>
           </tr>
           <tr>
@@ -70,7 +68,7 @@
           <tr>
             <td>Chi phí thuê</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="rentalCosts">
             </td>
           </tr>
           <tr>
@@ -84,7 +82,7 @@
           <tr>
             <td>Số lượng người tối đa</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="maxPeople">
             </td>
           </tr>
           <tr>
@@ -98,12 +96,12 @@
           <tr>
             <td>Kiểu thuê</td>
             <td>
-              <select class="form-control" name="" id="">
-                <option value="" style="text-align: center" selected>--- Chọn kiểu thuê ---</option>
-                <option value="" style="text-align: center">--- Năm ---</option>
-                <option value="" style="text-align: center">--- Tháng ---</option>
-                <option value="" style="text-align: center">--- Ngày ---</option>
-                <option value="" style="text-align: center">--- Giờ ---</option>
+              <select class="form-control" name="" id="" formControlName="rental">
+                <option [ngValue]="null" style="text-align: center" disabled selected>--- Chọn kiểu thuê ---</option>
+                <option value="year">Năm</option>
+                <option value="month" >Tháng</option>
+                <option value="day" >Ngày</option>
+                <option value="hours">Giờ</option>
               </select>
             </td>
           </tr>
@@ -115,13 +113,13 @@
             </td>
             <td></td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa' || temp == 'House'">
             <td>Tiêu chuẩn phòng</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="roomStandard">
             </td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa' || temp == 'House'">
             <td>
               <div class="vc_empty_space" style="height: 25px">
                 <span class="vc_empty_space_inner"></span>
@@ -129,13 +127,13 @@
             </td>
             <td></td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa' || temp == 'House'">
             <td>Tiện nghi khác</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="convenient">
             </td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa' || temp == 'House'">
             <td>
               <div class="vc_empty_space" style="height: 25px">
                 <span class="vc_empty_space_inner"></span>
@@ -143,13 +141,13 @@
             </td>
             <td></td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa'">
             <td>Diện tích hồ bơi</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="areaPool">
             </td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa'">
             <td>
               <div class="vc_empty_space" style="height: 25px">
                 <span class="vc_empty_space_inner"></span>
@@ -157,13 +155,13 @@
             </td>
             <td></td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa' || temp == 'House'">
             <td>Số tầng</td>
             <td>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" formControlName="numberFloor">
             </td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Villa' || temp == 'House'">
             <td>
               <div class="vc_empty_space" style="height: 25px">
                 <span class="vc_empty_space_inner"></span>
@@ -171,13 +169,13 @@
             </td>
             <td></td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Room'">
             <td>Dịch vụ miễn phí đi kèm</td>
             <td>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" formControlName="freeFacility">
             </td>
           </tr>
-          <tr>
+          <tr *ngIf="temp == 'Room'">
             <td>
               <div class="vc_empty_space" style="height: 25px">
                 <span class="vc_empty_space_inner"></span>
@@ -186,14 +184,26 @@
             <td></td>
           </tr>
           <tr>
+            <td>Hình ảnh</td>
             <td>
-              <a routerLink="/facility/list" class="btn btn-outline-primary button-option" href="list.html" style="text-decoration: none">
+              <select class="form-control" name="" formControlName="img">
+                <option [ngValue]="null" style="text-align: center" disabled selected>--- Chọn hình ảnh ---</option>
+                <option value="../assets/card1.jpg"> hình ảnh 1</option>
+                <option value="../assets/card2.jpg"> hình ảnh 2</option>
+                <option value="../assets/card3.jpg"> hình ảnh 3</option>
+                <option value="../assets/card4.jpg"> hình ảnh 4</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="btn btn-outline-primary button-option" routerLink="/facility/list" href="" style="text-decoration: none">
                 Quay lại
               </a>
             </td>
             <td>
               <button class="btn btn-success button-option" style="margin-left: 70px" type="submit">
-                Cập nhật
+              Cập nhật
               </button>
             </td>
           </tr>

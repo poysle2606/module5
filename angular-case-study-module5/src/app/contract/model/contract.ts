@@ -1,3 +1,5 @@
+import {Customer} from '../../customer/model/customer';
+
 export interface Contract {
   id?: number;
   codeContract?: string;
