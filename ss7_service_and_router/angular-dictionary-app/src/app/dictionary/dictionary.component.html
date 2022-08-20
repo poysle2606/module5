@@ -1,0 +1,19 @@
+<h2 align="center">Từ điển Tiếng Anh</h2>
+<table border="1" class="body-table">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Word</th>
+    <th>View</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let item of listWord, index as i">
+  <tr>
+    <td>{{i + 1}}</td>
+    <td>{{item.name}}</td>
+    <td>
+      <a [routerLink]="['/detail', item.name]">Detail</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+.body-table {
+  width: 80%;
+  height: auto;
+  border: 1px solid;
+  margin-left: 120px;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+td {
+  text-align: center;
+}
