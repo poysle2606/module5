@@ -1,0 +1,21 @@
+<form style="text-align: -webkit-center" [formGroup]="categoryForm" (ngSubmit)="updateCategory(id)">
+  <table>
+    <tr>
+      <td class="pe-5">Name:</td>
+      <td><input class="form-control" type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <div class="vstack" style="display: inline">
+          <button style="border: none; background: none" class="m-5">
+         Lưu
+          </button>
+          <a class="m-5" routerLink="/category">
+          Quay lại
+          </a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>

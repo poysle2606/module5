@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../service/product.service';
 import {Product} from '../../model/product';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -12,24 +13,28 @@ export class ProductListComponent implements OnInit {
   idProduct: number;
   nameProduct: string;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,
+              private router: Router) {
+    productService.getAll().subscribe( next => {
+      this.product = next;
+    }, error => {
+    });
   }
 
   ngOnInit(): void {
-    this.getAll();
   }
-
-  getAll() {
-    this.product = this.productService.getAll();
-  }
-
   openFacility(product: Product) {
     this.idProduct = product.id;
     this.nameProduct = product.name;
   }
 
-  delete(idProduct: number) {
-    this.productService.deleteProduct(idProduct);
-    this.ngOnInit();
+  delete(idProduct: number): void {
+    this.productService.deleteProduct(idProduct).subscribe(value => {
+      this.ngOnInit();
+      this.router.navigate(['']);
+      alert('Delete success');
+    }, error => {
+    }, () => {
+    });
   }
 }

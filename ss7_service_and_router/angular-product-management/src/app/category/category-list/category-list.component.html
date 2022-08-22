@@ -1,0 +1,23 @@
+<table class="table mt-5">
+  <tr>
+    <th>STT</th>
+    <th>Tên</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let category of categories; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{category.name}}</td>
+    <td>
+      <a [routerLink]="['/category/edit', category.id]">
+    Chỉnh sửa
+      </a>
+    </td>
+    <td>
+      <button style="border: none; background: none" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="openDelete(category.id,category.name)">
+       Xóa
+      </button>
+    </td>
+  </tr>
+</table>
+<a routerLink="/"><< Product</a>

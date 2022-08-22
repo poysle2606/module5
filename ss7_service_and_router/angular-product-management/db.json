@@ -1,19 +1,42 @@
 {
-  "posts": [
+  "product": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "IPhone 12",
+      "price": "2400000",
+      "description": "New"
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": "1560000",
+      "description": "Like new"
+    },
+    {
+      "name": "IPhone XSM",
+      "price": "968000",
+      "description": "97%",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "IPhone 13",
+      "price": "1560000",
+      "description": "Like new"
     }
   ],
-  "comments": [
+  "category": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Nokia"
+    },
+    {
+      "id": 2,
+      "name": "Apple"
+    },
+    {
+      "id": 3,
+      "name": "Sam Sung"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

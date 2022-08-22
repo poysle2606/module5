@@ -2,10 +2,6 @@
 <form [formGroup]="productForm" (ngSubmit)="updateProduct(id)">
   <table>
     <tr>
-      <td>Mã sản phẩm:</td>
-      <td><input type="number" formControlName="id"></td>
-    </tr>
-    <tr>
       <td>Tên sản phẩm:</td>
       <td><input type="text" formControlName="name"></td>
     </tr>
@@ -18,7 +14,7 @@
       <td><input type="text" formControlName="description"></td>
     </tr>
     <tr>
-      <td></td>
+      <td><a routerLink="" class="btn btn-danger">Back</a></td>
       <td><button>Cập nhật</button></td>
     </tr>
   </table>
