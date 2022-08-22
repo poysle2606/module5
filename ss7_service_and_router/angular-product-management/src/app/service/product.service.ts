@@ -36,18 +36,19 @@ export class ProductService {
     }];
   }
 
-  getAll() {
+  getAll(): Product[] {
     return this.products;
   }
 
-  saveProduct(product) {
+
+  saveProduct(product): any {
     this.products.push(product);
   }
 
-  findById(id: number) {
+  findById(id: number): any {
     return this.products.find(product => product.id === id);
   }
-  updateProduct(id: number, product: Product) {
+  updateProduct(id: number, product: Product): any {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === id) {
         this.products[i] = product;
@@ -55,7 +56,7 @@ export class ProductService {
     }
   }
 
-  deleteProduct(id: number) {
+  deleteProduct(id: number): any {
     this.products = this.products.filter(product => {
       return product.id !== id;
     });

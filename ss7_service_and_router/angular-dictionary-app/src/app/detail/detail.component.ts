@@ -10,7 +10,6 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 })
 export class DetailComponent implements OnInit {
   detailWord: Dictionary;
-  word = '';
 
   constructor(private dictionaryService: DictionaryService,
               private activeRouter: ActivatedRoute) {

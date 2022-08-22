@@ -9,6 +9,8 @@ import {Product} from '../../model/product';
 })
 export class ProductListComponent implements OnInit {
   product: Product[] = [];
+  idProduct: number;
+  nameProduct: string;
 
   constructor(private productService: ProductService) {
   }
@@ -19,5 +21,15 @@ export class ProductListComponent implements OnInit {
 
   getAll() {
     this.product = this.productService.getAll();
+  }
+
+  openFacility(product: Product) {
+    this.idProduct = product.id;
+    this.nameProduct = product.name;
+  }
+
+  delete(idProduct: number) {
+    this.productService.deleteProduct(idProduct);
+    this.ngOnInit();
   }
 }

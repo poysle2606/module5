@@ -13,7 +13,7 @@ export class DictionaryService {
     this.word.push({id: 3, name: 'fish', mean: 'cá'});
   }
 
-  getAll() {
+  getAll(): Dictionary[] {
     return this.word;
   }
 
