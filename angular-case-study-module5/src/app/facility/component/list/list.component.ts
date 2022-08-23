@@ -25,14 +25,15 @@ export class ListComponent implements OnInit {
   numberFloor: number;
   freeFacility: string;
   img: string;
+  p = 1;
 
   constructor(private facilityService: FacilityService,
               private facilityTypeService: FacilityTypeService) {
-    this.getList();
-    this.getTypeList();
   }
 
   ngOnInit(): void {
+    this.getList();
+    this.getTypeList();
   }
 
   private getList() {

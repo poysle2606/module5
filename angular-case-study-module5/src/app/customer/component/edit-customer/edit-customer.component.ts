@@ -4,6 +4,7 @@ import {CustomerServiceService} from '../../service/customer-service.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CustomerTypeServiceService} from '../../service/customer-type-service.service';
 import {CustomerType} from '../../model/customet-type';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-customer',
@@ -19,7 +20,8 @@ export class EditCustomerComponent implements OnInit {
   constructor(private customerService: CustomerServiceService,
               private activeRouter: ActivatedRoute,
               private router: Router,
-              private customerTypeService: CustomerTypeServiceService) {
+              private customerTypeService: CustomerTypeServiceService,
+              private toast: ToastrService) {
     this.activeRouter.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
       const customer = this.getCustomer(this.id);
@@ -53,6 +55,8 @@ export class EditCustomerComponent implements OnInit {
     const custom = this.customerForm.value;
     this.customerService.updateCustomer(id, custom);
     this.router.navigate(['/customer/list']);
-    alert('Cập nhật thành công');
+    this.toast.success('Edit success', 'tittle', {
+      timeOut: 2500, progressBar: false
+    });
   }
 }

@@ -15,7 +15,7 @@ export class ContractServiceService {
       startDay: '2022-04-23',
       endDay: '26-04-2022',
       cost: 1000000,
-      total: 4000000
+      total: 4000000,
     });
     this.listContract.push({
       id: 2,
@@ -24,7 +24,7 @@ export class ContractServiceService {
       startDay: '2022-06-05',
       endDay: '11-06-2022',
       cost: 2000000,
-      total: 6000000
+      total: 6000000,
     });
     this.listContract.push({
       id: 3,
@@ -33,7 +33,7 @@ export class ContractServiceService {
       startDay: '2022-04-11',
       endDay: '15-04-2022',
       cost: 2000000,
-      total: 5000000
+      total: 5000000,
     });
     this.listContract.push({
       id: 4,

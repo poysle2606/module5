@@ -23,11 +23,11 @@ export class CreateContractComponent implements OnInit {
   formContract: FormGroup = new FormGroup({
     id: new FormControl(),
     codeContract: new FormControl('', [Validators.required]),
-    customer: new FormControl('', [Validators.required]),
-    startDay: new FormControl('', [Validators.required]),
-    endDay: new FormControl('', [Validators.required]),
-    cost: new FormControl('', [Validators.required, Validators.pattern('^\d+$')]),
-    total: new FormControl('', [Validators.required, Validators.pattern('^\d+$')])
+    customer: new FormControl(),
+    startDay: new FormControl(),
+    endDay: new FormControl(),
+    cost: new FormControl('', [Validators.required, Validators.pattern('^\\d+$')]),
+    total: new FormControl('', [Validators.required, Validators.pattern('^\\d+$')])
   });
 
   ngOnInit(): void {

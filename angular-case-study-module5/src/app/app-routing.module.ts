@@ -1,30 +1,17 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {BodyComponent} from './body/body.component';
-import {ListComponent} from './facility/component/list/list.component';
-import {ListCustomerComponent} from './customer/component/list-customer/list-customer.component';
-import {ListContractComponent} from './contract/component/list-contract/list-contract.component';
-import {CreateComponent} from './facility/component/create/create.component';
-import {EditComponent} from './facility/component/edit/edit.component';
-import {CreateCustomerComponent} from './customer/component/create-customer/create-customer.component';
-import {EditCustomerComponent} from './customer/component/edit-customer/edit-customer.component';
-import {CreateContractComponent} from './contract/component/create-contract/create-contract.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 
 const routes: Routes = [
-  {path: '', component: BodyComponent},
-  {path: 'facility/list', component: ListComponent},
-  {path: 'facility/create', component: CreateComponent},
-  {path: 'facility/edit/:id', component: EditComponent},
-  {path: 'customer/list', component: ListCustomerComponent},
-  {path: 'customer/create', component: CreateCustomerComponent},
-  {path: 'customer/edit/:id', component: EditCustomerComponent},
-  {path: 'contract/list', component: ListContractComponent},
-  {path: 'contract/create', component: CreateContractComponent}
+  {path: '', loadChildren: () => import('./body/body.module').then(value => value.BodyModule)},
+  {path: 'customer', loadChildren: () => import('./customer/router/customer.module').then(value => value.CustomerModule)},
+  {path: 'facility', loadChildren: () => import('./facility/router/facility.module').then(value => value.FacilityModule)},
+  {path: 'contract', loadChildren: () => import('./contract/router/contract.module').then(value => value.ContractModule)}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

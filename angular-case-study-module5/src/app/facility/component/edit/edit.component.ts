@@ -25,7 +25,7 @@ export class EditComponent implements OnInit {
       const facility = this.getFacility(this.id);
       this.editFacilityForm = new FormGroup({
         id: new FormControl(facility.id, [Validators.required]),
-        facility: new FormControl(),
+        facility: new FormControl(facility.facilityType.name),
         nameFacility: new FormControl(facility.nameFacility, [Validators.required]),
         area: new FormControl(facility.area, [Validators.required]),
         rentalCosts: new FormControl(facility.rentalCosts, [Validators.required]),
@@ -36,7 +36,7 @@ export class EditComponent implements OnInit {
         areaPool: new FormControl(facility.areaPool, [Validators.required]),
         numberFloor: new FormControl(facility.numberFloor, [Validators.required]),
         freeFacility: new FormControl(facility.freeFacility, [Validators.required]),
-        img: new FormControl()
+        img: new FormControl(facility.img)
       });
     });
   }

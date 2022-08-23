@@ -23,9 +23,9 @@
 <div class="container">
   <div class="vc_empty_space" style="height: 16px"><span class="vc_empty_space_inner"></span></div>
   <div class="row">
-    <div class="col-lg-4" *ngFor="let item of listFacility, index as i">
+    <div class="col-lg-4" *ngFor="let item of listFacility| paginate: { itemsPerPage: 3, currentPage: p }, index as i">
       <div class="card card-content shadow mb-5 bg-body rounded" style="width: 16rem">
-        <img src="../assets/Vietnam_Danang_Furama_Ocean-Deluxe-double-bed-F-370x239.jpg" width="120"
+        <img [src]="item.img" width="120"
              height="170" class="card-img-top" alt="...">
         <div class="card-body">
           <b class="card-title">{{item.nameFacility}}</b>
@@ -45,6 +45,10 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="paging">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 
 <!-- Modal -->
@@ -79,10 +83,10 @@
       <div class="modal-body">
         <div class=".">
           <table>
-            <tr>
-              <td>Loại dịch vụ: </td>
-              <td>{{facilityTypeS.name}}</td>
-            </tr>
+<!--            <tr>-->
+<!--              <td>Loại dịch vụ: </td>-->
+<!--              <td>{{facilityTypeS.name}}</td>-->
+<!--            </tr>-->
             <tr>
               <td>Tên dịch vụ: </td>
               <td>{{nameFacility}}</td>

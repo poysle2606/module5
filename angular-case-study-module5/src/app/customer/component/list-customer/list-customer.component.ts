@@ -14,6 +14,7 @@ export class ListCustomerComponent implements OnInit {
   idDelete: number;
   nameDelete: string;
   idCardDelete: number;
+  p = 1;
 
   constructor(private customerService: CustomerServiceService, private customerTypeService: CustomerTypeServiceService) {
   }

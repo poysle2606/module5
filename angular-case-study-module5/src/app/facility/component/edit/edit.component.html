@@ -24,7 +24,6 @@
             <td>Dịch vụ</td>
             <td>
               <select class="form-control" name="" formControlName="facility" (change)="changeFacility($event.target.value)">
-                <option [ngValue]="null" style="text-align: center" disabled selected>--- Chọn dịch vụ ---</option>
                 <option *ngFor="let item of facilityTypeList" [value]="item.name" style="text-align: center" >{{item.name}}</option>
               </select>
             </td>
@@ -187,11 +186,12 @@
             <td>Hình ảnh</td>
             <td>
               <select class="form-control" name="" formControlName="img">
-                <option [ngValue]="null" style="text-align: center" disabled selected>--- Chọn hình ảnh ---</option>
                 <option value="../assets/card1.jpg"> hình ảnh 1</option>
                 <option value="../assets/card2.jpg"> hình ảnh 2</option>
                 <option value="../assets/card3.jpg"> hình ảnh 3</option>
                 <option value="../assets/card4.jpg"> hình ảnh 4</option>
+                <option value="../assets/card5.jpg"> hình ảnh 5</option>
+                <option value="../assets/card6.jpg"> hình ảnh 6</option>
               </select>
             </td>
           </tr>

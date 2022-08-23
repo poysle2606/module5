@@ -21,9 +21,28 @@
             </td>
           </tr>
           <tr>
+            <td>Mã hợp đồng</td>
+            <td>
+              <input type="text" class="form-control" formControlName="codeContract">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td>
+               <span style="color: red" *ngIf="formContract.controls.codeContract.hasError('required')
+                  && formContract.touched">
+                Thông tin trống
+              </span>
+            </td>
+          </tr>
+          <tr>
             <td>Tên khách hàng</td>
             <td>
-              <select class="form-control" formControlName="typeCustomer">
+              <select class="form-control" formControlName="customer">
                 <option [ngValue]="null" disabled selected style="text-align: center">--Chọn loại khách--</option>
                 <option *ngFor="let item of listCustomer" [ngValue]="item"
                         style="text-align: center">{{item.name}}</option>

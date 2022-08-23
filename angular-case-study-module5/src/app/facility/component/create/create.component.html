@@ -23,7 +23,7 @@
           <tr>
             <td>Dịch vụ</td>
             <td>
-              <select class="form-control" name="" formControlName="facility" (change)="changeFacility($event.target.value)">
+              <select class="form-control" name="" formControlName="facilityType" (change)="changeFacility($event.target.value)">
                 <option [ngValue]="null" style="text-align: center" disabled selected>--- Chọn dịch vụ ---</option>
                 <option *ngFor="let item of facilityTypeList" [value]="item.name" style="text-align: center" >{{item.name}}</option>
               </select>
@@ -155,13 +155,13 @@
             </td>
             <td></td>
           </tr>
-          <tr *ngIf="temp == 'Villa' || temp == 'House'">
+          <tr *ngIf="temp == 'Villa'">
             <td>Số tầng</td>
             <td>
               <input class="form-control" type="number" formControlName="numberFloor">
             </td>
           </tr>
-          <tr *ngIf="temp == 'Villa' || temp == 'House'">
+          <tr *ngIf="temp == 'Villa'">
             <td>
               <div class="vc_empty_space" style="height: 25px">
                 <span class="vc_empty_space_inner"></span>
