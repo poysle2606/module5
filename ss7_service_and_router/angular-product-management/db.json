@@ -1,28 +1,45 @@
 {
   "product": [
     {
-      "id": 1,
+      "category": "Sam Sung",
       "name": "IPhone 12",
       "price": "2400000",
-      "description": "New"
+      "description": "New",
+      "id": 1
     },
     {
-      "id": 2,
+      "category": "Apple",
       "name": "IPhone 11",
       "price": "1560000",
-      "description": "Like new"
+      "description": "Like new",
+      "id": 2
     },
     {
       "name": "IPhone XSM",
       "price": "968000",
       "description": "97%",
+      "category": "Apple",
       "id": 3
     },
     {
-      "id": 4,
-      "name": "IPhone 13",
-      "price": "1560000",
-      "description": "Like new"
+      "category": "Sam sung",
+      "name": "1111",
+      "price": 1111,
+      "description": "111",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "111",
+      "price": 2222,
+      "description": "2222"
+    },
+    {
+      "category": "Apple",
+      "id": 7,
+      "name": "4555",
+      "price": 5555,
+      "description": "555"
     }
   ],
   "category": [

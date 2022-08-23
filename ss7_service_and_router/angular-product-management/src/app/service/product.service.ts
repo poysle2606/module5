@@ -17,8 +17,8 @@ export class ProductService {
   }
 
 
-  saveProduct(product): any {
-    this.products.push(product);
+  saveProduct(product): Observable<Product>  {
+    return this.http.post<Product>(`http://localhost:3000/product`, product);
   }
 
   findById(id: number): Observable<Product> {

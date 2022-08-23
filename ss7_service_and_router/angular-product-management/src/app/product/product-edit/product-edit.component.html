@@ -2,6 +2,14 @@
 <form [formGroup]="productForm" (ngSubmit)="updateProduct(id)">
   <table>
     <tr>
+      <td>Danh mục</td>
+      <td>
+        <select formControlName="category">
+          <option *ngFor="let item of categoryList" [value]="item.name">{{item.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
       <td>Tên sản phẩm:</td>
       <td><input type="text" formControlName="name"></td>
     </tr>

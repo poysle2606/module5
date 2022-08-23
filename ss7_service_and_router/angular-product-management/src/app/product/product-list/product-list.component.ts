@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../service/product.service';
 import {Product} from '../../model/product';
 import {Router} from '@angular/router';
+import {CategoryService} from '../../category/category.service';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-product-list',
@@ -14,6 +16,7 @@ export class ProductListComponent implements OnInit {
   nameProduct: string;
 
   constructor(private productService: ProductService,
+              private categoryService: CategoryService,
               private router: Router) {
     productService.getAll().subscribe( next => {
       this.product = next;
