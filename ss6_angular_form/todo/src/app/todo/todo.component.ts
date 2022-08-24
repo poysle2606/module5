@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {Todo} from "../todo";
-import {FormControl} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {Todo} from '../todo';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 let _id = 1;
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -10,11 +11,16 @@ let _id = 1;
 })
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
-
   content = new FormControl();
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  toggleTodo(i: number) {
+    this.todos[i].complete = !this.todos[i].complete;
   }
 
   change() {
@@ -28,9 +34,5 @@ export class TodoComponent implements OnInit {
       this.todos.push(todo);
       this.content.reset();
     }
-  }
-
-  toggleTodo(i: number) {
-    this.todos[i].complete = !this.todos[i].complete;
   }
 }

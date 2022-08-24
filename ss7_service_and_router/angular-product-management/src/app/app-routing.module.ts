@@ -9,12 +9,14 @@ import {CategoryCreateComponent} from './category/category-create/category-creat
 
 
 const routes: Routes = [
-  {path: '', component: ProductListComponent},
-  {path: 'product/create', component: ProductCreateComponent},
-  {path: 'product/edit/:id', component: ProductEditComponent},
-  {path: 'category', component: CategoryListComponent},
-  {path: 'category/edit/:id', component: CategoryEditComponent},
-  {path: 'category/create', component: CategoryCreateComponent},
+  {
+    path: '',
+    loadChildren: () => import('./product/product.module').then(value => value.ProductModule)
+    },
+  {
+    path: '',
+    loadChildren: () => import('./category/category.module').then(value => value.CategoryModule)
+  }
 ];
 
 @NgModule({
