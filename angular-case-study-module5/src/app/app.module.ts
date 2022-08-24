@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -27,15 +28,21 @@ import {NgxPaginationModule} from 'ngx-pagination';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       progressBar: true,
       progressAnimation: 'increasing',
-      preventDuplicates: true})
+      preventDuplicates: true
+    })
   ],
   providers: [],
+  exports: [
+    NavbarSearchComponent,
+    NavbarComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

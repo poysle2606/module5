@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <div>
   <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
   <div>
@@ -42,9 +41,9 @@
           <tr>
             <td>Tên khách hàng</td>
             <td>
-              <select class="form-control" formControlName="customer">
+              <select class="form-control" formControlName="customerName">
                 <option [ngValue]="null" disabled selected style="text-align: center">--Chọn loại khách--</option>
-                <option *ngFor="let item of listCustomer" [ngValue]="item"
+                <option *ngFor="let item of listCustomer" [value]="item.name"
                         style="text-align: center">{{item.name}}</option>
               </select>
             </td>
@@ -60,7 +59,7 @@
           <tr>
             <td>Ngày bắt đầu</td>
             <td>
-              <input class="form-control" type="date">
+              <input class="form-control" type="date" formControlName="startDay">
             </td>
           </tr>
           <tr>
@@ -74,7 +73,7 @@
           <tr>
             <td>Ngày kết thúc</td>
             <td>
-              <input class="form-control" type="date">
+              <input class="form-control" type="date" formControlName="endDay">
             </td>
           </tr>
           <tr>

@@ -1,4 +1,3 @@
-<app-navbar-search></app-navbar-search>
 <div>
   <h3 class="text">KHÁCH HÀNG</h3>
   <img src="../assets/Furama_Resort_Danang_-_Ocean_Pool_2.jpg" height="400" width="1263"/>
@@ -20,6 +19,10 @@
 
 <div>
   <a routerLink="/customer/create" href="" class="btn btn-primary button-create-customer">Thêm mới khách hàng</a>
+ <div class="button-search">
+   <input type="text" placeholder=" Tìm kiếm" [(ngModel)]="search">
+   <button type="button" style="margin-left: 5px" (click)="searchs()">Search</button>
+ </div>
 </div>
 
 <div class="container">
@@ -43,7 +46,7 @@
     <tr style="text-align: center">
       <td>{{i + 1}}</td>
       <td>{{customer.name}}</td>
-      <td>{{customer.dayOfBirth}}</td>
+      <td>{{customer.dayOfBirth | date: 'dd/MM/yyyy'}}</td>
       <td>
         <span *ngIf="customer.gender === 0">Nam</span>
         <span *ngIf="customer.gender === 1">Nữ</span>
@@ -52,7 +55,7 @@
       <td>{{customer.numberPhone}}</td>
       <td>{{customer.email}}</td>
       <td>{{customer.address}}</td>
-      <td>{{customer.typeCustomer.nameType}}</td>
+      <td>{{customer.typeCustomer}}</td>
       <td>
         <a class="btn btn-primary button-option" [routerLink]="['/customer/edit', customer.id]" href="">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen"
@@ -65,7 +68,7 @@
       <td>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger button-option" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" (click)="openDelete(customer)">
+                data-bs-target="#exampleModal" (click)="openDelete(customer.id, customer.name)">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
                viewBox="0 0 16 16">
             <path

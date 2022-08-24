@@ -3,6 +3,7 @@ import {Facility} from '../../model/facility';
 import {FacilityService} from '../../service/facility.service';
 import {FacilityTypeService} from '../../service/facility-type.service';
 import {FacilityType} from '../../model/facility-type';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list',
@@ -13,9 +14,9 @@ export class ListComponent implements OnInit {
   listFacility: Facility[] = [];
   listFacilityType: FacilityType[] = [];
   facilityTypeS: FacilityType;
-   nameFacility: string;
-   idFacility: number;
-   area: number;
+  nameFacility: string;
+  idFacility: number;
+  area: number;
   rentalCosts: number;
   maxPeople: number;
   rental: string;
@@ -28,16 +29,21 @@ export class ListComponent implements OnInit {
   p = 1;
 
   constructor(private facilityService: FacilityService,
-              private facilityTypeService: FacilityTypeService) {
+              private facilityTypeService: FacilityTypeService,
+              private toast: ToastrService) {
+    this.getList();
   }
 
   ngOnInit(): void {
-    this.getList();
     this.getTypeList();
   }
 
   private getList() {
-    this.listFacility = this.facilityService.getAll();
+    this.facilityService.getAll().subscribe(value => {
+      this.listFacility = value;
+    }, error => {
+    }, () => {
+    });
   }
 
   openFacility(facility2: Facility) {
@@ -56,11 +62,18 @@ export class ListComponent implements OnInit {
   }
 
   delete(idFacility: number) {
-    this.facilityService.delete(idFacility);
-    this.ngOnInit();
+    this.facilityService.delete(idFacility).subscribe(value => {
+      this.ngOnInit();
+      this.toast.success('Xóa dịch vụ thành công', 'tittle', {
+        timeOut: 2500, progressBar: false
+      });
+    });
+
   }
 
   private getTypeList() {
-    this.listFacilityType = this.facilityTypeService.getList();
+    this.facilityTypeService.getList().subscribe(value => {
+      this.listFacilityType = value;
+    });
   }
 }

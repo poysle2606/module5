@@ -4,6 +4,7 @@ import {FacilityService} from '../../service/facility.service';
 import {FacilityTypeService} from '../../service/facility-type.service';
 import {FacilityType} from '../../model/facility-type';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -14,6 +15,13 @@ export class CreateComponent implements OnInit {
 
   facilityTypeList: FacilityType[];
   temp: string;
+
+  constructor(private facilityService: FacilityService,
+              private facilityTypeService: FacilityTypeService,
+              private router: Router,
+              private toast: ToastrService) {
+    this.getFacilityTypeList();
+  }
 
   facilityForm: FormGroup = new FormGroup({
     id: new FormControl('', [Validators.required]),
@@ -31,28 +39,31 @@ export class CreateComponent implements OnInit {
     img: new FormControl()
   });
 
-  constructor(private facilityService: FacilityService,
-              private facilityTypeService: FacilityTypeService,
-              private router: Router) {
-  }
 
   ngOnInit(): void {
-    this.getFacilityTypeList();
-  }
-
-  private getFacilityTypeList() {
-    this.facilityTypeList = this.facilityTypeService.getList();
   }
 
   submitForm() {
     const facility = this.facilityForm.value;
-    this.facilityService.save(facility);
-    this.facilityForm.reset();
-    this.router.navigate(['facility/list']);
-    alert('Thêm mới dịch vụ thành công');
+    this.facilityService.save(facility).subscribe(value => {
+      this.facilityForm.reset();
+      this.router.navigate(['facility/list']);
+      this.toast.success('Create success', 'tittle', {
+        timeOut: 1500, progressBar: false
+      });
+    }, error => {
+    }, () => {
+    });
   }
 
   changeFacility(value: any) {
     this.temp = value;
   }
+
+  private getFacilityTypeList() {
+    this.facilityTypeService.getList().subscribe(value => {
+      this.facilityTypeList = value;
+    });
+  }
+
 }

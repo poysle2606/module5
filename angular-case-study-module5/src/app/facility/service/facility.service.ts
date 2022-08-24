@@ -1,110 +1,37 @@
 import {Injectable} from '@angular/core';
 import {Facility} from '../model/facility';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {environment} from '../../../environments/environment';
+import {Customer} from '../../customer/model/customer';
+
+const API_URL = `${environment.apiUrl}`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityService {
-  listFacility: Facility[] = [];
 
-  constructor() {
-    this.listFacility.push({
-      id: 1,
-      facilityType: {id: 3, name: 'House'},
-      nameFacility: 'House 01',
-      area: 60,
-      rentalCosts: 5000000,
-      img: 'assets/Vietnam_Danang_Furama_Ocean-Deluxe-double-bed-F-370x239.jpg',
-    });
-    this.listFacility.push({
-      id: 2,
-      facilityType: {id: 3, name: 'House'},
-      nameFacility: 'Room 02',
-      area: 60,
-      rentalCosts: 5000000,
-      img: '../assets/card1.jpg'
-    });
-    this.listFacility.push({
-      id: 3,
-      facilityType: {id: 1, name: 'Villa'},
-      nameFacility: 'Villa 01',
-      area: 60,
-      rentalCosts: 5000000,
-      img: '../assets/card2.jpg'
-    });
-    this.listFacility.push({
-      id: 4,
-      facilityType: {id: 2, name: 'Room'},
-      nameFacility: 'Room 01',
-      area: 90,
-      rentalCosts: 8000000,
-      img: '../assets/card3.jpg'
-    });
-    this.listFacility.push({
-      id: 5,
-      facilityType: {id: 1, name: 'Villa'},
-      nameFacility: 'Villa 11',
-      area: 160,
-      rentalCosts: 17000000,
-      img: '../assets/card4.jpg'
-    });
-    this.listFacility.push({
-      id: 6,
-      facilityType: {id: 3, name: 'House'},
-      nameFacility: 'House 03',
-      area: 50,
-      rentalCosts: 4500000,
-      img: '../assets/card5.jpg'
-    });
-    this.listFacility.push({
-      id: 7,
-      facilityType: {id: 3, name: 'House'},
-      nameFacility: 'House 05',
-      area: 80,
-      rentalCosts: 8000000,
-      img: '../assets/card6.jpg'
-    });
-    this.listFacility.push({
-      id: 8,
-      facilityType: {id: 2, name: 'Room'},
-      nameFacility: 'Room 01',
-      area: 50,
-      rentalCosts: 5000000,
-      img: '../assets/card7.jpg'
-    });
-    this.listFacility.push({
-      id: 9,
-      facilityType: {id: 1, name: 'Villa'},
-      nameFacility: 'Villa 04',
-      area: 140,
-      rentalCosts: 12000000,
-      img: '../assets/card8.jpg'
-    });
+  constructor(private http: HttpClient) {
   }
 
-  getAll() {
-    return this.listFacility;
+  getAll(): Observable<Facility[]> {
+    return this.http.get<Facility[]>(API_URL + '/facility');
   }
 
   save(facility) {
-    this.listFacility.push(facility);
+   return this.http.post<Facility>(API_URL + '/facility', facility);
   }
 
-  delete(id: number) {
-    this.listFacility = this.listFacility.filter(facility => {
-      return facility.id !== id;
-    });
+  delete(id: number): Observable<Facility>  {
+  return this.http.delete<Facility>(`${API_URL}/facility/${id}`);
   }
 
   findById(id: number) {
-    return this.listFacility.find(facility => facility.id === id);
+    return this.http.get<Facility>(`${API_URL}/facility/${id}`);
   }
 
-  update(id: number, facility: any) {
-    for (let i = 0; i < this.listFacility.length; i++) {
-      if (this.listFacility[i].id === id) {
-        return this.listFacility[i] = facility;
-      }
-    }
+  update(id: number, facility: any): Observable<Facility> {
+    return this.http.put<Facility>(`${API_URL}/facility/${id}`, facility);
   }
 }

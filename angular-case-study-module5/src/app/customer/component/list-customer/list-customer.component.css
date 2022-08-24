@@ -52,12 +52,18 @@ th {
   align-content: center;
   margin-bottom: 20px;
   margin-left: 43%;
+  float: left;
 }
 
 .button-create-customer:hover {
   background-color: white;
   color: blue;
   transform: scale(1.1);
+}
+
+.button-search {
+  float: left;
+  margin-left: 200px;
 }
 
 .font-content {

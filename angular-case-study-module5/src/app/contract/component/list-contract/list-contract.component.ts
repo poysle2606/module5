@@ -15,6 +15,8 @@ export class ListContractComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listContract = this.contractService.getAll();
+    this.contractService.getAll().subscribe(value => {
+      this.listContract = value;
+    });
   }
 }

@@ -4,6 +4,7 @@ import {FacilityService} from '../../service/facility.service';
 import {FacilityTypeService} from '../../service/facility-type.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FacilityType} from '../../model/facility-type';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit',
@@ -14,39 +15,40 @@ export class EditComponent implements OnInit {
   editFacilityForm: FormGroup;
   id: number;
   temp: string;
-  facilityTypeList: FacilityType[] = [];
+  facilityTypeList: FacilityType[];
 
   constructor(private facilityService: FacilityService,
               private facilityTypeService: FacilityTypeService,
               private activeRouter: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private toast: ToastrService) {
     this.activeRouter.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-      const facility = this.getFacility(this.id);
-      this.editFacilityForm = new FormGroup({
-        id: new FormControl(facility.id, [Validators.required]),
-        facility: new FormControl(facility.facilityType.name),
-        nameFacility: new FormControl(facility.nameFacility, [Validators.required]),
-        area: new FormControl(facility.area, [Validators.required]),
-        rentalCosts: new FormControl(facility.rentalCosts, [Validators.required]),
-        rental: new FormControl(facility.rental, [Validators.required]),
-        maxPeople: new FormControl(facility.maxPeople, [Validators.required]),
-        roomStandard: new FormControl(facility.roomStandard, [Validators.required]),
-        convenient: new FormControl(facility.convenient, [Validators.required]),
-        areaPool: new FormControl(facility.areaPool, [Validators.required]),
-        numberFloor: new FormControl(facility.numberFloor, [Validators.required]),
-        freeFacility: new FormControl(facility.freeFacility, [Validators.required]),
-        img: new FormControl(facility.img)
-      });
+      this.getFacility(this.id);
+      this.getFacilityTypeList();
     });
   }
 
   ngOnInit(): void {
-    this.getFacilityTypeList();
   }
 
   private getFacility(id: number) {
-    return this.facilityService.findById(id);
+    return this.facilityService.findById(id).subscribe(value => {
+      this.editFacilityForm = new FormGroup({
+        facility: new FormControl(value.facilityType),
+        nameFacility: new FormControl(value.nameFacility, [Validators.required]),
+        area: new FormControl(value.area, [Validators.required]),
+        rentalCosts: new FormControl(value.rentalCosts, [Validators.required]),
+        rental: new FormControl(value.rental, [Validators.required]),
+        maxPeople: new FormControl(value.maxPeople, [Validators.required]),
+        roomStandard: new FormControl(value.roomStandard, [Validators.required]),
+        convenient: new FormControl(value.convenient, [Validators.required]),
+        areaPool: new FormControl(value.areaPool, [Validators.required]),
+        numberFloor: new FormControl(value.numberFloor, [Validators.required]),
+        freeFacility: new FormControl(value.freeFacility, [Validators.required]),
+        img: new FormControl(value.img)
+      });
+    });
   }
 
 
@@ -55,14 +57,19 @@ export class EditComponent implements OnInit {
   }
 
   private getFacilityTypeList() {
-    this.facilityTypeList = this.facilityTypeService.getList();
+    this.facilityTypeService.getList().subscribe(value => {
+      this.facilityTypeList = value;
+    });
   }
 
   updateFacility(id: number) {
     const facility = this.editFacilityForm.value;
-    this.facilityService.update(id, facility);
-    this.editFacilityForm.reset();
-    this.router.navigate(['facility/list']);
-    alert('Cập nhật dịch vụ thành công');
+    this.facilityService.update(id, facility).subscribe(value => {
+      this.editFacilityForm.reset();
+      this.router.navigate(['facility/list']);
+      this.toast.success('Sửa dịch vụ thành công', 'tittle', {
+        timeOut: 2500, progressBar: false
+      });
+    });
   }
 }

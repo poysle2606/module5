@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {CustomerServiceService} from '../../service/customer-service.service';
-import {CustomerTypeServiceService} from '../../service/customer-type-service.service';
-import {CustomerType} from '../../model/customet-type';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-customer',
@@ -13,27 +11,46 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class ListCustomerComponent implements OnInit {
   idDelete: number;
   nameDelete: string;
-  idCardDelete: number;
   p = 1;
-
-  constructor(private customerService: CustomerServiceService, private customerTypeService: CustomerTypeServiceService) {
-  }
-
   listCustomer: Customer[];
+  search: string;
+
+  constructor(private customerService: CustomerServiceService,
+              private toast: ToastrService
+  ) {
+  }
 
   ngOnInit(): void {
-    this.listCustomer = this.customerService.getAll();
-
+    this.getAll();
   }
 
-  openDelete(customer: Customer) {
-    this.idDelete = customer.id;
-    this.nameDelete = customer.name;
-    this.idCardDelete = customer.idCard;
+  getAll() {
+    this.customerService.getAll().subscribe(value => {
+      this.listCustomer = value;
+    });
   }
 
-  delete(idDelete: number) {
-    this.customerService.delete(idDelete);
-    this.ngOnInit();
+
+  openDelete(id: number, name: string) {
+    this.idDelete = id;
+    this.nameDelete = name;
+  }
+
+  delete(idDelete: number): void {
+    this.customerService.delete(idDelete).subscribe(value => {
+      this.getAll();
+      this.toast.success('Xóa khách hàng thành công', 'tittle', {
+        timeOut: 2500, progressBar: false
+      });
+    }, error => {
+    }, () => {
+    });
+  }
+
+  searchs() {
+    return this.customerService.searchEverything(this.search).subscribe(value => {
+      this.listCustomer = value;
+      this.p = 1;
+    });
   }
 }

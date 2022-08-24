@@ -6,6 +6,7 @@ import {CustomerTypeServiceService} from '../../../customer/service/customer-typ
 import {CustomerType} from '../../../customer/model/customet-type';
 import {CustomerServiceService} from '../../../customer/service/customer-service.service';
 import {Customer} from '../../../customer/model/customer';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-contract',
@@ -13,17 +14,18 @@ import {Customer} from '../../../customer/model/customer';
   styleUrls: ['./create-contract.component.css']
 })
 export class CreateContractComponent implements OnInit {
-  listCustomer: Customer[] = [];
+  listCustomer: Customer[];
 
   constructor(private contractService: ContractServiceService,
               private customerList: CustomerServiceService,
-              private router: Router) {
+              private router: Router,
+              private toast: ToastrService) {
   }
 
   formContract: FormGroup = new FormGroup({
     id: new FormControl(),
     codeContract: new FormControl('', [Validators.required]),
-    customer: new FormControl(),
+    customerName: new FormControl(),
     startDay: new FormControl(),
     endDay: new FormControl(),
     cost: new FormControl('', [Validators.required, Validators.pattern('^\\d+$')]),
@@ -36,12 +38,18 @@ export class CreateContractComponent implements OnInit {
 
   submitContract() {
     const contract1 = this.formContract.value;
-    this.contractService.save(contract1);
-    this.formContract.reset();
-    this.router.navigate(['/contract/list']);
+    this.contractService.save(contract1).subscribe(value => {
+      this.formContract.reset();
+      this.router.navigate(['/contract/list']);
+      this.toast.success('Thêm mới hợp đồng thành công', 'title', {
+        timeOut: 2500, progressBar: false
+      });
+    });
   }
 
   getCustomerList() {
-    this.listCustomer = this.customerList.getAll();
+   this.customerList.getAll().subscribe(value => {
+      this.listCustomer = value;
+    });
   }
 }

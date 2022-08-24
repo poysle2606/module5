@@ -1,4 +1,3 @@
-<app-navbar-search></app-navbar-search>
 <div>
   <h3 class="text">LOẠI PHÒNG</h3>
   <img src="../assets/banner01.jpg" height="400" width="1263"/>
@@ -83,17 +82,17 @@
       <div class="modal-body">
         <div class=".">
           <table>
-<!--            <tr>-->
-<!--              <td>Loại dịch vụ: </td>-->
-<!--              <td>{{facilityTypeS.name}}</td>-->
-<!--            </tr>-->
+            <tr>
+              <td>Loại dịch vụ: </td>
+              <td>{{facilityTypeS}}</td>
+            </tr>
             <tr>
               <td>Tên dịch vụ: </td>
               <td>{{nameFacility}}</td>
             </tr>
             <tr>
               <td>Giá: </td>
-              <td>{{rentalCosts}}</td>
+              <td>{{rentalCosts| currency:'':'symbol':'1.0'}}</td>
             </tr>
           </table>
         </div>

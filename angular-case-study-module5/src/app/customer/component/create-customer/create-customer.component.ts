@@ -13,7 +13,6 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class CreateCustomerComponent implements OnInit {
   customerForm: FormGroup = new FormGroup({
-    id: new FormControl('', [Validators.required, Validators.minLength(6)]),
     name: new FormControl('', [Validators.required]),
     dayOfBirth: new FormControl(),
     gender: new FormControl(),
@@ -24,22 +23,26 @@ export class CreateCustomerComponent implements OnInit {
     typeCustomer: new FormControl()
   });
 
+  customerTypeList: CustomerType[] = [];
+
   constructor(private customerService: CustomerServiceService,
               private customerTypeService: CustomerTypeServiceService,
               private router: Router,
               private toast: ToastrService) {
   }
 
-  customerTypeList: CustomerType[];
-
   submit() {
     const customer = this.customerForm.value;
-    this.customerService.save(customer);
-    this.customerForm.reset();
-    this.router.navigate(['customer/list']);
-    this.toast.success('Create success', 'tittle', {
-      timeOut: 1500, progressBar: false
+    this.customerService.save(customer).subscribe(value => {
+      this.customerForm.reset();
+      this.router.navigate(['customer/list']);
+      this.toast.success('Create success', 'tittle', {
+        timeOut: 1500, progressBar: false
+      });
+    }, error => {
+    }, () => {
     });
+
   }
 
   ngOnInit(): void {
@@ -47,6 +50,8 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   getCustomerType() {
-    this.customerTypeList = this.customerTypeService.getAll();
+    this.customerTypeService.getAll().subscribe(value => {
+      this.customerTypeList = value;
+    });
   }
 }
