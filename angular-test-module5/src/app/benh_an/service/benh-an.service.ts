@@ -22,18 +22,18 @@ export class BenhAnService {
   }
 
   findById(id: number) {
-    return this.http.get<BenhAn>(`${API_URL}/patient/${id}`);
+    return this.http.get<BenhAn>(`${API_URL}/${id}`);
   }
 
   updatePatient(id: number, patient: BenhAn): Observable<BenhAn> {
-    return this.http.put<BenhAn>(`${API_URL}/patient/${id}`, patient);
+    return this.http.put<BenhAn>(`${API_URL}/${id}`, patient);
   }
 
   save(patient) {
-    return this.http.post<BenhAn>(API_URL + '/patient', patient);
+    return this.http.post<BenhAn>(API_URL, patient);
   }
 
   searchEverything(name: string): Observable<BenhAn[]> {
-    return this.http.get<BenhAn[]>(`${API_URL}/patient?q=` + name);
+    return this.http.get<BenhAn[]>(`${API_URL}/?q=` + name);
   }
 }
