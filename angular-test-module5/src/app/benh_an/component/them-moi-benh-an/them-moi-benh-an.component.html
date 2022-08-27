@@ -1,0 +1,180 @@
+<div>
+  <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+  <div>
+    <div class="col-lg-12" style="margin: 0 auto">
+      <h2 style="text-align: center"
+          class="vc_custom_heading font-content">THÊM MỚI BỆNH ÁN</h2>
+    </div>
+  </div>
+</div>
+
+<div class="overlay">
+  <form *ngIf="addPatientForm" id="form-create" [formGroup]="addPatientForm" (ngSubmit)="submit()">
+    <div class="con">
+      <div>
+        <table>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Mã bệnh án</td>
+            <td>
+              <input class="form-control" type="text" formControlName="codePatient">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <ng-container formGroupName="patienter">
+            <tr>
+              <td>
+                <input type="number" formControlName="id" hidden>
+              </td>
+            </tr>
+            <tr>
+              <td>Mã bệnh nhân</td>
+              <td>
+                <input class="form-control" type="text" formControlName="codePatienter">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vc_empty_space" style="height: 25px">
+                  <span class="vc_empty_space_inner"></span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Tên bệnh nhân</td>
+              <td>
+                <input type="text" class="form-control" formControlName="namePatienter">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vc_empty_space" style="height: 25px">
+                  <span class="vc_empty_space_inner"></span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </ng-container>
+          <tr>
+            <td>Ngày nhập viện</td>
+            <td>
+              <input class="form-control" type="date" formControlName="startDay">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Ngày ra viện</td>
+            <td>
+              <input class="form-control" type="date" formControlName="endDay">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Lý do nhập viện</td>
+            <td>
+              <input class="form-control" type="text" formControlName="reason">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td>
+              <span style="color: red"
+                    *ngIf="addPatientForm.controls.reason.hasError('required') &&
+                     addPatientForm.dirty">
+                Thông tin trống
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Phương pháp điều trị</td>
+            <td>
+              <input class="form-control" type="text" formControlName="method">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td>
+              <span style="color: red"
+                    *ngIf="addPatientForm.controls.method.hasError('required') &&
+                    addPatientForm.dirty">
+                Thông tin trống
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Bác sĩ điều trị</td>
+            <td>
+              <input class="form-control" type="text" formControlName="doctor">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="vc_empty_space" style="height: 25px">
+                <span class="vc_empty_space_inner"></span>
+              </div>
+            </td>
+            <td>
+              <span style="color: red"
+                    *ngIf="addPatientForm.controls.doctor.hasError('required') &&
+                    addPatientForm.dirty">
+                Thông tin trống
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="btn btn-outline-primary button-option" routerLink="/patient/list" href=""
+                 style="text-decoration: none">
+                Quay lại
+              </a>
+            </td>
+            <td>
+              <button class="btn btn-success button-option" style="margin-left: 70px" type="submit">
+                Cập nhật
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+

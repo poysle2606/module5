@@ -1,0 +1,77 @@
+{
+  "patient": [
+    {
+      "codePatient": "BA-112",
+      "patienter": {
+        "id": 1,
+        "codePatienter": "BN-112",
+        "namePatienter": "Lê Văn A"
+      },
+      "startDay": "2016-06-21",
+      "endDay": "2016-06-22",
+      "reason": "Suy thận mạn",
+      "method": "Chạy thận",
+      "doctor": "Nguyên Văn Đôn",
+      "id": 1
+    },
+    {
+      "codePatient": "BA-223",
+      "patienter": {
+        "id": 2,
+        "codePatienter": "BN-113",
+        "namePatienter": "Lê Văn B"
+      },
+      "startDay": "2016-06-21",
+      "endDay": "2016-06-22",
+      "reason": "Covid-19",
+      "method": "Cách ly",
+      "doctor": "Lê Văn X",
+      "id": 2
+    },
+    {
+      "codePatient": "BA-908",
+      "patienter": {
+        "id": 2,
+        "codePatienter": "BN-113",
+        "namePatienter": "Lê Văn B"
+      },
+      "startDay": "2016-06-21",
+      "endDay": "2016-06-22",
+      "reason": "Covid-19",
+      "method": "Cách ly",
+      "doctor": "Lê Văn S",
+      "id": 3
+    },
+    {
+      "codePatient": "BA-1111",
+      "patienter": {
+        "id": 1,
+        "codePatienter": "BN-112",
+        "namePatienter": "Lê Văn A"
+      },
+      "startDay": "2022-08-18",
+      "endDay": "2022-08-20",
+      "reason": "Ung thư ",
+      "method": "Mổ",
+      "doctor": "Nguyễn Văn L",
+      "id": 4
+    }
+  ],
+  "patienter": [
+    {
+      "id": 1,
+      "codePatienter": "BN-112",
+      "namePatienter": "Lê Văn A"
+    },
+    {
+      "id": 2,
+      "codePatienter": "BN-113",
+      "namePatienter": "Lê Văn B"
+    },
+    {
+      "id": 3,
+      "codePatienter": "BN-114",
+      "namePatienter": "Lê Văn C"
+    }
+  ]
+}

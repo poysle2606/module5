@@ -45,15 +45,15 @@
       "typeCustomer": "Silver"
     },
     {
-      "id": 5,
       "name": "Nguyễn Thị E",
       "dayOfBirth": "1982-05-19",
       "gender": 1,
       "idCard": 114789321,
-      "numberPhone": "083452333",
-      "email": "nguyenD1982@gmail.com",
+      "numberPhone": "0834523332",
+      "email": "nguyenF1982@gmail.com",
       "address": "Huế",
-      "typeCustomer": "Gold"
+      "typeCustomer": "Gold",
+      "id": 5
     }
   ],
   "customer-type": [

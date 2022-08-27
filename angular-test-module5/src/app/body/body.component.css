@@ -1,0 +1,22 @@
+h5 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: Playfair Display;
+}
+
+.font-content {
+  font-size: 24px;
+  color: #cbbe73;
+  line-height: 36px;
+  font-family: Playfair Display;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#img-logo {
+  float: left;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerType} from '../../model/customet-type';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerServiceService} from '../../service/customer-service.service';
 import {CustomerTypeServiceService} from '../../service/customer-type-service.service';
 import {Router} from '@angular/router';
@@ -14,7 +14,7 @@ import {ToastrService} from 'ngx-toastr';
 export class CreateCustomerComponent implements OnInit {
   customerForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    dayOfBirth: new FormControl(),
+    dayOfBirth: new FormControl('', this.validateBirthday),
     gender: new FormControl(),
     idCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}$')]),
     numberPhone: new FormControl('', [Validators.required, Validators.pattern('^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$')]),
@@ -42,7 +42,15 @@ export class CreateCustomerComponent implements OnInit {
     }, error => {
     }, () => {
     });
+  }
 
+  validateBirthday(formControl: AbstractControl) {
+  const date = new Date(formControl.value);
+  if (new Date().getTime() - (date.getTime() + 18 * 365 * 24 * 60 * 60 * 1000) < 0) {
+      return {customerBirthday: true};
+    } else {
+      return null;
+    }
   }
 
   ngOnInit(): void {
